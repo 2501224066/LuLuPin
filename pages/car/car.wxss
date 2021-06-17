@@ -1,0 +1,242 @@
+page {
+  background: #f8f8f8;
+}
+
+.null {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #a0a0a0;
+  height: 70vh;
+}
+
+.null>.img {
+  width: 400rpx;
+  height: 400rpx;
+}
+
+.list {
+  margin-top: 20rpx;
+  border-top: 1rpx solid #ececec;
+  overflow: hidden;
+}
+
+.list>.item {
+  border-bottom: 1rpx solid #ececec;
+  position: relative;
+  height: 200rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+
+.list>.item>.l {
+  flex-basis: 100rpx;
+  flex-shrink: 0;
+  padding-left: 40rpx;
+  box-sizing: border-box;
+}
+
+.list>.item>.goods {
+  flex-basis: 652rpx;
+  flex-shrink: 0;
+  height: 200rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.list>.item>.goods>.img {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 6rpx;
+  overflow: hidden;
+  position: relative;
+  margin-right: 17rpx;
+}
+
+.list>.item>.goods>.img>.discount {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  color: #fff;
+  background: #F93C4C;
+  font-size: 19rpx;
+  padding: 5rpx 12rpx;
+  border-radius: 0 0 20rpx 0;
+}
+
+.list>.item>.goods>.content {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.list>.item>.goods>.content>.title {
+  font-size: 25rpx;
+}
+
+.list>.item>.goods>.content>.title>span {
+  background: #F93C4C;
+  color: #fff;
+  font-size: 17rpx;
+  padding: 4rpx 10rpx;
+  border-radius: 6rpx;
+  position: relative;
+  top: -4rpx;
+  left: 0;
+  margin-right: 10rpx;
+}
+
+.list>.item>.goods>.content>.down {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list>.item>.goods>.content>.specs {
+  color: #999;
+  font-size: 20rpx;
+}
+
+.list>.item>.goods>.content>.down>.price {
+  flex: 1;
+  color: #E24444;
+  font-size: 33rpx;
+}
+
+.list>.item>.goods>.content>.down>.price>span {
+  font-size: 21rpx;
+  margin-right: 10rpx;
+}
+
+.list>.item>.goods>.content>.down>.num {
+  display: flex;
+  align-items: center;
+}
+
+.list>.item>.goods>.content>.down>.num>.reduce {
+  width: 41rpx;
+  height: 41rpx;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #F93C4C;
+  font-size: 28rpx;
+  border: 1rpx solid #F93C4C;
+}
+
+.list>.item>.goods>.content>.down>.num>input {
+  width: 60rpx;
+  text-align: center;
+  margin: 0 4rpx;
+}
+
+.list>.item>.goods>.content>.down>.num>.add {
+  width: 41rpx;
+  height: 41rpx;
+  background: #F93C4C;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  font-size: 28rpx;
+}
+
+.list>.item>.remove {
+  flex-basis: 150rpx;
+  flex-shrink: 0;
+  background: #F93C4C;
+  color: #fff;
+  text-align: center;
+  height: 200rpx;
+  line-height: 200rpx;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  background: #fff;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer>.fbox {
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer>.fbox>.l {
+  display: flex;
+  align-items: center;
+}
+
+.footer>.fbox>.l>view {
+  margin-left: 20rpx;
+}
+
+.footer>.fbox>.r {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footer>.fbox>.r>.price {
+  font-size: 23rpx;
+  margin-right: 25rpx;
+}
+
+.footer>.fbox>.r>.price>.tag {
+  margin-top: 8rpx;
+  color: #A7A7A7;
+}
+
+.footer>.fbox>.r>.price span {
+  color: #F93C4C;
+  font-size: 31rpx;
+}
+
+.footer>.fbox>.r>.sub {
+  width: 214rpx;
+  height: 70rpx;
+  background: #F93C4C;
+  color: #fff;
+  font-size: 27rpx;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 35rpx;
+}
+.tips {
+  margin: 20rpx auto;
+  text-align: center;
+  color: #999;
+  font-size: 24rpx;
+}
+.guang {
+  text-align: center;
+  color: #ffffff;
+  background: #F93C4C;
+  padding: 20rpx 40rpx;
+  border-radius: 50rpx;
+  margin-top: 30rpx;
+}

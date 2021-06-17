@@ -1,0 +1,3 @@
+.box {
+  border-top: 20rpx solid #f8f8f8;
+}

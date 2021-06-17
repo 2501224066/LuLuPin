@@ -1,0 +1,20 @@
+<view class="setting">
+  <view class="list">
+    <view class="li">
+      <view class="l">头像</view>
+      <view class="img">
+        <image src="{{userInfo.avatarUrl ? userInfo.avatarUrl : '/image/header.png'}}" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view class="li">
+      <view class="l">昵称</view>
+      <view class="r">{{userInfo.nickName}}</view>
+    </view>
+    <view class="li">
+      <view class="l">联系方式</view>
+      <view class="r">{{userInfo.phone ? userInfo.phone : '-'}}</view>
+    </view>
+  </view>
+  <view class="auth" bindtap="to" data-url='/pages/authorize/authorize'>授权微信用户信息</view>
+  <view class="unlogin" bindtap="unlogin">退出登陆</view>
+</view>

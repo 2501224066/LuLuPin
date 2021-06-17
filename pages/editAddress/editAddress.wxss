@@ -1,0 +1,50 @@
+.list {
+  border-top: 20rpx solid #f8f8f8;
+}
+
+.list>.li {
+  display: flex;
+  align-items: center;
+  padding: 50rpx;
+  border-bottom: 1rpx solid #ececec;
+}
+
+.list>.li>.label {
+  width: 30%;
+  font-weight: 500;
+}
+
+.list>.li>.center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.list>.li>.img {
+  width: 15rpx;
+  height: 30rpx;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 20rpx 5%;
+  box-sizing: border-box;
+}
+
+.footer>.fbox {
+  height: 80rpx;
+}
+
+.footer>.fbox>.btn {
+  width: 100%;
+  height: 100%;
+  line-height: 80rpx;
+  text-align: center;
+  background: #F74E6F;
+  color: #fff;
+  border-radius: 45rpx;
+  font-size: 30rpx;
+}

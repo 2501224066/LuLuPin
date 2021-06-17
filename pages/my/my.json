@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "carNum": "/components/carNum/carNum",
+    "copyright": "/components/copyright/copyright"
+  },
+  "navigationBarTextStyle": "white",
+  "navigationStyle": "custom"
+}

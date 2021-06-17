@@ -1,0 +1,45 @@
+.my-earn {
+
+  padding-bottom: 3vh;
+}
+.tab {
+  padding: 0 10%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #999;
+}
+.tab>view {
+  padding: 20rpx 10rpx;
+}
+
+.tab>.selected {
+  border-bottom: 8rpx solid #f73d4c;
+  font-weight: 500;
+  color: #333;
+}
+
+.box {
+  border-top: 20rpx solid #f8f8f8;
+}
+
+.box>.li {
+  padding: 30rpx 50rpx;
+  border-bottom: 1rpx solid #ececec;
+}
+
+.box>.li>.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+
+.box>.li>.content>.r {
+  color: #999;
+}
+
+.box>.li>.content>.r>span {
+  color: #FA4556;
+}

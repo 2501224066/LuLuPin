@@ -1,0 +1,135 @@
+page {
+  background: #f8f8f8;
+}
+
+
+.order-detail {
+  padding-bottom: 2vh;
+}
+
+.line {
+  border-top: 1rpx solid #ececec;
+  padding: 30rpx 50rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.line>.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.line>.center {
+  flex: 1;
+  text-align: right;
+  color: #999;
+}
+
+.weight {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.top {
+  border-top: 20rpx solid #f8f8f8;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 0 0 20rpx 0;
+  box-sizing: border-box;
+  background: #fff;
+  z-index: 100;
+}
+
+.footer>.fbox {
+  height: 150rpx;
+}
+
+.footer>.fbox>.tag {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 23rpx;
+  background: #fdebc9;
+  color: #CD6730;
+  text-align: center;
+}
+
+.footer>.fbox>.content {
+  height: 100rpx;
+  padding: 20rpx 20rpx 0 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.footer>.fbox>.content>.btn {
+  height: 70rpx;
+  border-radius: 35rpx;
+  line-height: 70rpx;
+  text-align: center;
+  margin: 5rpx 0;
+  width: 180rpx;
+  background: #FA4556;
+  color: #fff;
+  font-weight: 300;
+}
+
+.goods {
+  border-top: 1rpx solid #ececec;
+}
+
+.goods>.item {
+  height: 140rpx;
+  background: #fff;
+  padding: 20rpx 50rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goods>.item>.img {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+
+.goods>.item>.title {
+  flex: 1;
+  height: 100%;
+  margin: 0 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #999;
+
+}
+
+.goods>.item>.title>.text {
+  font-size: 28rpx;
+  color: #333;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+}
+
+.goods>.item>.price {
+  text-align: right;
+}
+
+.goods>.item>.price>.text {
+  font-weight: 500;
+  font-size: 32rpx;
+}

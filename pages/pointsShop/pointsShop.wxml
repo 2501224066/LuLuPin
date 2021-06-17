@@ -1,0 +1,70 @@
+<view class="points-shop">
+
+  <!-- 搜索 -->
+  <view class="search">
+    <view class="box shadow" bindtap="to" data-url="/pages/classify/classify">
+      <view class="img">
+        <image src="/image/search2.png" mode="aspectFill"></image>
+      </view>
+      <view>搜索心仪的商品</view>
+    </view>
+  </view>
+
+  <!-- 轮播 -->
+  <view class="lb">
+    <view class="box">
+      <swiper autoplay="true">
+        <swiper-item wx:for="{{swiper}}" wx:key="*this">
+          <image src="{{imgPre}}{{item.image}}" mode="aspectFill" bindtap="to" data-url="{{item.path}}"></image>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+
+  <!-- ICON -->
+  <view class="icon">
+    <view class="item" bindtap="to" data-url="/pages/pointsPush/pointsPush">
+      <view class="img">
+        <image src="https://pin.giftfond.cn/icon/push.png" mode="aspectFill"></image>
+      </view>
+      <view>热销推荐</view>
+    </view>
+    <view class="item" wx:for="{{icon}}" wx:key="index" bindtap="to" data-url="/pages/classify/classify?id={{item.id}}">
+      <view class="img">
+        <image src="{{imgPre}}{{item.icon}}" mode="aspectFill"></image>
+      </view>
+      <view>{{item.name}}</view>
+    </view>
+  </view>
+
+  <!-- 推荐 -->
+  <view class="push">
+    <view class="tag">热销推荐</view>
+    <view class="goods">
+      <view class="item" wx:for="{{pushGoods}}" wx:key="index">
+        <goods3 detail="{{item}}" imgPre="{{imgPre}}"></goods3>
+      </view>
+    </view>
+  </view>
+
+  <!-- TAB -->
+  <view class="tab" id="dom">
+    <view class="{{navScrollTop < domScrollTop ? 'box' : 'fixed'}}">
+      <view class="item {{tabIndex == index ? 'sel' : ''}}" wx:for="{{tab}}" wx:key="index" bindtap="checkoutTab"
+        data-index="{{index}}">{{item.name}}</view>
+    </view>
+    
+  </view>
+
+  <!-- 商品列表 -->
+  <view class="list">
+    <view class="item" wx:for="{{goods}}" wx:key="inde">
+      <goods3 detail="{{item}}" imgPre="{{imgPre}}"></goods3>
+    </view>
+  </view>
+</view>
+
+<!-- 购物车数量 -->
+<carNum></carNum>
+
+<add-tips></add-tips>

@@ -1,0 +1,31 @@
+<view class="send">
+  <view class="box">
+
+    <view class="item">
+      <view class="tag">快递公司</view>
+      <view class="ipt">
+        <picker bindchange="bindPickerChange" range="{{picker}}" value="{{pickerIndex}}">
+          <view class="picker">
+            {{picker[pickerIndex]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="item">
+      <view class="tag">快递单号</view>
+      <view class="ipt">
+        <input type="text" placeholder="请输入快递单号" placeholder-class="placeholder" value="{{code}}" bindinput="code" />
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<!-- 底部浮动栏目 -->
+<view class="footer" style="height:{{iphoneFooter ? 153 : 115}}rpx">
+  <view class="fbox">
+    <view class="save" bindtap="sub">发货</view>
+  </view>
+</view>
+<view style="height:{{iphoneFooter ? 153 : 115}}rpx;"></view>

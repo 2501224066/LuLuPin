@@ -1,0 +1,23 @@
+<view class="authorize">
+    <!-- 导航栏 -->
+    <view class="navbar" style="height:{{navHeight}}px; padding-top:{{navTop}}px">
+    <view class="box">
+      <view class="img" bindtap="toHome">
+        <image src="/image/back-home.png" mode="aspectFill"></image>
+      </view>
+      <view>授权</view>
+      <view class="img"></view>
+    </view>
+  </view>
+  <view class="navbar-brace" style="height:{{navHeight}}px"></view>
+
+  <view class="bg">
+    <image src="/image/bg2.jpeg" mode="aspectFill"></image>
+  </view>
+  <view class="logo">
+    <image src="/image/logo.png" mode="aspectFill"></image>
+  </view>
+  <view class="title">lulu拼</view>
+
+  <button class="sub" bindtap="getUserProfile">授权信息</button>
+</view>

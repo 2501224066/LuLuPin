@@ -1,0 +1,7 @@
+.box{
+  border-top: 20rpx solid #f8f8f8;
+}
+
+.box>.content{
+  padding: 50rpx 30rpx 0 30rpx;
+}

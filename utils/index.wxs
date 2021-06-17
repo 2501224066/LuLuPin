@@ -1,0 +1,37 @@
+// 元素是否存在列表
+var indexOf = function (array, param) {
+  return array.indexOf(param);
+}
+
+// 字符串限制长度
+var strHid = function (str, length = 12) {
+  if (str) {
+    var ret = str.substring(0, length);
+    if (str.length > length) {
+      ret += "...";
+    }
+    return ret;
+  }
+}
+
+// 保留n位小数
+var toFixed = function (num, lenth) {
+  return  Number(num).toFixed(lenth);
+}
+
+// 获取小数点后数字
+var pointCut = function (num, len = 2) {
+  num = num.toFixed(len) * 100
+  if (num < 10) {
+    num = "0" + num
+  }
+  num = num + ""
+  return num.substring(num.length - len, num.length);
+}
+
+module.exports = {
+  indexOf: indexOf,
+  strHid: strHid,
+  toFixed: toFixed,
+  pointCut: pointCut
+}

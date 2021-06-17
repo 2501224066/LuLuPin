@@ -1,0 +1,23 @@
+<!-- 工具 -->
+<wxs src="../../utils/index.wxs" module="util"></wxs>
+
+<view class="goods4" bindtap="to" data-url="/pages/pointsGoodsDetail/pointsGoodsDetail?id={{detail.id}}">
+  <view class="img">
+    <view class="discount" wx:if="{{detail.tags != ''}}">{{detail.tags}}</view>
+    <image src="{{imgPre}}{{detail.image_thumb}}" mode="aspectFill"></image>
+  </view>
+  <view class="content">
+    <view class="title">
+      <span wx:if="{{detail.home_push}}">荐</span> {{util.strHid(detail.name, 24)}}
+    </view>
+    <view class="num">
+      已售{{detail.sale_num}}件
+    </view>
+    <view class="down">
+      <view class="price"><span>¥</span>{{util.toFixed(detail.price, 2)}}<text class="bline">￥{{detail.price_market}}</text></view>
+      <view class="add">
+        <image src="/image/right3.png" mode="aspectFill"></image>
+      </view>
+    </view>
+  </view>
+</view>

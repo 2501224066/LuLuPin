@@ -1,0 +1,10 @@
+
+<view class="box">
+<view class="contact">
+  <view class="contact_title">官方微信</view>
+  <view class="contact_code"><image src="https://pin.giftfond.cn/icon/code.jpg"></image></view>
+  <view class="contact_number">微信号：{{order_name}}</view>
+</view>
+<!-- 复制 -->
+<label class='lab_copy' bindtap='copyBtn'>复制微信号</label>
+</view>

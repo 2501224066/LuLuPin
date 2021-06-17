@@ -1,0 +1,74 @@
+.make{
+  padding-bottom: 2vh;
+}
+
+.tab {
+  padding: 0 10%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #999;
+}
+
+.tab>view {
+  padding: 20rpx 10rpx;
+}
+
+.tab>.selected {
+  border-bottom: 8rpx solid #f73d4c;
+  font-weight: 500;
+  color: #333;
+}
+
+.search {
+  border-top: 20rpx solid #f8f8f8;
+  padding: 50rpx 50rpx 0 50rpx;
+}
+
+.search>.input {
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 35rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1rpx solid #ececec
+}
+
+.search>.input>input {
+  height: 100%;
+  width: 100%;
+}
+
+.search>.input>.img {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 20rpx;
+}
+
+.keyword {
+  border-top: 20rpx solid #f8f8f8;
+  border-bottom: 20rpx solid #f8f8f8;
+  padding: 30rpx 50rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.keyword>.l {
+  font-size: 30rpx;
+  font-weight: 500;
+}
+
+.keyword>.l span {
+  margin-left: 20rpx;
+  color: #FA4556;
+}
+
+.keyword>.img {
+  width: 30rpx;
+  height: 30rpx;
+}

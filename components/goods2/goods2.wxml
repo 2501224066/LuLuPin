@@ -1,0 +1,28 @@
+<!-- 工具 -->
+<wxs src="../../utils/index.wxs" module="util"></wxs>
+
+<view class="goods2">
+  <view class="list">
+    <view class="li">
+      <view class="photo">
+        <view class="tag-img">
+          <image src="/image/tag.png" mode="aspectFill"></image>
+        </view>
+        <view class="tag-title">{{detail.help_people_num}}人团</view>
+        <view class="img">
+          <image src="{{detail.image_thumb}}" mode="aspectFill">
+          </image>
+        </view>
+      </view>
+      <view class="detail">
+        <view class="title">
+          {{util.strHid(detail.name, 35)}}
+        </view>
+        <view class="label">
+          <view><span>中签得 {{detail.point}} 购物币，未中签得 ¥{{detail.factory_subsidy}}</span></view>          
+          <view><span>团长额外得 ￥{{detail.chief_subsidy}}</span></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,23 @@
+<!-- 工具 -->
+<wxs src="../../utils/index.wxs" module="util"></wxs>
+
+<view class="my-offline">
+  <!-- tab -->
+  <view class="tab">
+    <view wx:for="{{tab}}" wx:key="index" bindtap="checkoutTab" data-index="{{index}}">{{item}}</view>
+  </view>
+
+  <!-- 列表 -->
+  <view class="list">
+    <view class="item" wx:for="{{list}}" wx:key='index'>
+      <view class="user">
+        <view class="img">
+          <image src="{{item.avatar ? item.avatar : '/image/header.png'}}" mode="aspectFill"></image>
+        </view>
+        <view class="username">{{item.nickname}}</view>
+      </view>
+      <view>¥ {{util.toFixed(item.num, 2)}}</view>
+      <view class="price">+ ¥ {{util.toFixed(item.pro_total, 2)}}</view>
+    </view>
+  </view>
+</view>

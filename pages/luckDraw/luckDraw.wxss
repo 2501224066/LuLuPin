@@ -1,0 +1,290 @@
+.content {
+  border-top: 20rpx solid #f8f8f8;
+  padding: 0 3%;
+}
+
+.res {
+  padding: 50rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #ececec;
+}
+
+.res>.text {
+  font-size: 30rpx;
+}
+
+.res>.num {
+  margin: 20rpx 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.res>.num>view {
+  width: 60rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: #fff;
+  background: #f73d4c;
+  margin: 0 10rpx;
+  border-radius: 6rpx;
+  font-size: 30rpx;
+}
+
+.res>.time {
+  color: #999;
+}
+
+.code {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  color: #666;
+  margin: 50rpx 0;
+}
+
+.code>.list {
+  position: relative;
+  width: 136rpx;
+  height: 136rpx;
+  background: #eaebed;
+  border-radius: 8rpx;
+  overflow: hidden;
+  margin-top: 6rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+
+.code>.list>.tag {
+  width: 70rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 24rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  background: #f73d4c;
+  color: #fff;
+}
+
+.code>.checkout {
+  background: #f7b03c;
+  color: #fff;
+}
+
+.code>.wait {
+  background: #f73d4c;
+  color: #fff;
+}
+
+.join>.title {
+  font-size: 30rpx;
+}
+
+.join>.text {
+  margin-top: 20rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.join>.text>span {
+  color: red;
+}
+
+.red {
+  color: red;
+}
+
+.rule {
+  margin-top: 50rpx;
+}
+
+.rule>.title {
+  font-size: 30rpx;
+}
+
+.rule>.text {
+  color: #999;
+  margin-top: 20rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.rule>.text>view {
+  margin-top: 10rpx;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 20rpx 5%;
+  box-sizing: border-box;
+  background: #fff;
+  border-top: 1rpx solid #ececec;
+  z-index: 1;
+}
+
+.footer>.fbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer>.fbox>.btn1 {
+  width: 47%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #919293;
+  border-radius: 45rpx;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 300;
+}
+
+.footer>.fbox>.btn2 {
+  width: 47%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #f93d4c;
+  border-radius: 45rpx;
+  color: #fff;
+  font-size: 30rpx;
+  padding: 0;
+  margin: 0;
+  font-weight: 300;
+}
+
+.footer>.fbox>.btn3 {
+  width: 47%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #bdbec0;
+  border-radius: 45rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.rel {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, .6);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rel>.box {
+  width: 400rpx;
+  height: 669rpx;
+  border-radius: 10rpx;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.rel>.box>.bg{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 400rpx;
+  height: 669rpx;
+  z-index: -1;
+}
+
+.rel>.box>.close {
+  position: absolute;
+  top: -50rpx;
+  right: -50rpx;
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 30rpx;
+  border: 2rpx solid #666;
+  background: #fff;
+  font-size: 40rpx;
+}
+
+.rel>.box>.num {
+  width: 200rpx;
+  height: 200rpx;
+  text-align: center;
+  line-height: 200rpx;
+  background: #FA4556;
+  color: #fff;
+  border-radius: 10rpx;
+  font-size: 150rpx;
+  margin: 10rpx 0 70rpx 0;
+}
+
+.tips {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, .6);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tips>.box {
+  width: 500rpx;
+  border-radius: 10rpx;
+  position: relative;
+  text-align: center;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 40rpx;
+  font-weight: bold;
+  padding: 40rpx 0;
+}
+
+.tips>.box>.memo {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 10rpx;
+  font-weight: 400;
+}
+
+.tips>.box>.img {
+  width: 400rpx;
+  height: 314rpx;
+}
+
+.tips>.box>.close {
+  font-weight: 400;
+  color: #fff;
+  font-size: 30rpx;
+  background: linear-gradient(#ff7b02, #ff9300);
+  width: 300rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 30rpx;
+  margin-top: 50rpx;
+}

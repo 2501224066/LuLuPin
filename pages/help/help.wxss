@@ -1,0 +1,43 @@
+page {
+  background: #f8f8f8;
+}
+
+.help {
+  padding: 0 40rpx 10vh 40rpx;
+  font-size: 30rpx;
+}
+
+.box {
+  margin-top: 40rpx;
+  background: #fff;
+}
+
+.box>.top {
+  padding: 30rpx;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box>.top>.img {
+  width: 30rpx;
+  height: 17rpx;
+  line-height: 0;
+}
+
+.box>.text {
+  border-top: 1rpx solid #ececec;
+  padding: 30rpx 40rpx;
+  color: #999;
+}
+
+.box>.text>view{
+  margin-bottom: 30rpx;
+  text-decoration: underline;
+  color: #FA4556;
+}
+
+.box>.text>view:last-child{
+  margin-bottom: 0;
+}

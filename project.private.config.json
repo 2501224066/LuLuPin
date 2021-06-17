@@ -1,0 +1,291 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": 0,
+          "name": "抽奖",
+          "pathName": "pages/luckDraw/luckDraw",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "商品详情",
+          "pathName": "pages/goodsDetail/goodsDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 2,
+          "name": "我的",
+          "pathName": "pages/my/my",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "排行榜",
+          "pathName": "pages/ranking/ranking",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "地址",
+          "pathName": "pages/address/address",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "修改地址",
+          "pathName": "pages/editAddress/editAddress",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "收藏",
+          "pathName": "pages/collection/collection",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的推荐",
+          "pathName": "pages/push/push",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "钱包",
+          "pathName": "pages/wallet/wallet",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "提现",
+          "pathName": "pages/withdrawal/withdrawal",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "帮助中心",
+          "pathName": "pages/help/help",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "拼团",
+          "pathName": "pages/make/make",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "订单",
+          "pathName": "pages/order/order",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "订单详情",
+          "pathName": "pages/orderDetail/orderDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "关于我们",
+          "pathName": "pages/aboutWe/aboutWe",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "规则说明",
+          "pathName": "pages/ruleExplain/ruleExplain",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "确认订单",
+          "pathName": "pages/confirm/confirm",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的拼团",
+          "pathName": "pages/myEarn/myEarn",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "拼团详情",
+          "pathName": "pages/earnDetail/earnDetail",
+          "query": "id=123&shareUserId=99&joinGroupId=100",
+          "scene": null
+        },
+        {
+          "name": "登录",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "授权",
+          "pathName": "pages/authorize/authorize",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "协议",
+          "pathName": "pages/agreement/agreement",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "设置",
+          "pathName": "pages/setting/setting",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "禁止传销",
+          "pathName": "pages/noPyramid/noPyramid",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "服务说明",
+          "pathName": "pages/serviceNote/serviceNote",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "购物币商城",
+          "pathName": "pages/pointsShop/pointsShop",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "商品分类",
+          "pathName": "pages/classify/classify",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "购物币商品详情",
+          "pathName": "pages/pointsGoodsDetail/pointsGoodsDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "海报",
+          "pathName": "pages/poster/poster",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "购物车",
+          "pathName": "pages/car/car",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "推广员",
+          "pathName": "pages/promoter/promoter",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "提现明细",
+          "pathName": "pages/withdrawalList/withdrawalList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "佣金明细",
+          "pathName": "pages/commissionList/commissionList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的下线",
+          "pathName": "pages/myOffline/myOffline",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "推广码",
+          "pathName": "pages/promotionCode/promotionCode",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "推广订单",
+          "pathName": "pages/promotionOrder/promotionOrder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "申请推广员",
+          "pathName": "pages/applyPromoter/applyPromoter",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "申请完成",
+          "pathName": "pages/applyPromoterRel/applyPromoterRel",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "购物币购买确认订单",
+          "pathName": "pages/pointsConfirm/pointsConfirm",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "佣金排名",
+          "pathName": "pages/commissionRank/commissionRank",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "购物币明细",
+          "pathName": "pages/pointsList/pointsList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "购物币推荐",
+          "pathName": "pages/pointsPush/pointsPush",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "绑定成功",
+          "pathName": "pages/bindSuccess/bindSuccess",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "首页",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "发货",
+          "pathName": "pages/orderSend/orderSend",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

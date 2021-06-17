@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "首页",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#f73d4c",
+  "usingComponents": {
+    "goods3": "/components/goods3/goods3",
+    "carNum":"/components/carNum/carNum",
+    "add-tips": "/components/add-tips/index"
+  }
+}

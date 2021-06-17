@@ -1,0 +1,63 @@
+<!-- 工具 -->
+<wxs src="../../utils/index.wxs" module="util"></wxs>
+
+<view class="confirm">
+  <view class="top"></view>
+  <view class="title">收货地址</view>
+
+  <!-- 地址 -->
+  <view class="address shadow" bindtap="to" data-url="/pages/address/address">
+    <view class="img">
+      <image src="/image/address2.png"></image>
+    </view>
+    <view class="center" wx:if="{{address.id}}">
+      <view class="name">{{address.contact}}<span>{{address.mobile}}</span></view>
+      <view>{{address.province}}-{{address.city}}-{{address.area}} {{address.street}}</view>
+    </view>
+    <view class="center" wx:else>暂未设置地址，点击前往设置</view>
+    <view class="r">
+      <image src=" /image/right2.png">
+      </image>
+    </view>
+  </view>
+
+  <view class="title">商品清单</view>
+
+  <!-- 信息 -->
+  <view class="detail shadow">
+    <goods5 detail="{{item}}" imgPre="{{imgPre}}" wx:for="{{detail.goodList}}" wx:key="index"></goods5>
+    <view class="li">
+      <view>购物币抵用</view>
+      <view>{{util.toFixed(detail.counPoint, 2)}}购物币</view>
+      <view>- ¥ {{util.toFixed(detail.counPointPrice, 2)}}</view>
+    </view>
+    <view class="li">
+      <view>运费</view>
+      <view>满68免运费</view>
+      <view>¥ {{util.toFixed(detail.freight_price, 2)}}</view>
+    </view>
+    <view class="li">
+      <view>余额抵用</view>
+      <view>¥ {{util.toFixed(detail.counMoney, 2)}}</view>
+      <view>- ¥ {{util.toFixed(detail.counMoney, 2)}}</view>
+    </view>
+    <view class="li">
+      <view>实际应付</view>
+      <view></view>
+      <view>¥ {{util.toFixed(detail.payMoney,2)}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 底部浮动栏目 -->
+<view class="footer" style="height:{{iphoneFooter ? 204 : 170}}rpx">
+  <view class="fbox">
+    <view class="tag">抵扣说明：优先抵扣购物币，其次抵扣账户余额，不足额外支付补齐</view>
+    <view class="content">
+      <view>合计：<span style="color:#FA4556">¥ {{util.toFixed(detail.payMoney,2)}}</span></view>
+      <view class="btn" bindtap="create" wx:if="{{orderId}}">支付</view>
+      <view class="btn" bindtap="create" wx:else>提交订单</view>
+    </view>
+  </view>
+</view>
+<view style="height:{{iphoneFooter ? 204 : 170}}rpx;margin-top:2vh"></view>

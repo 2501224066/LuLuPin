@@ -1,0 +1,16 @@
+<view class="points-push">
+  <!-- 宣传图 -->
+  <view class="top">
+    <view class="img">
+      <image src="{{imgPre}}{{pointsPushImg}}" mode="aspectFill"></image>
+    </view>
+  </view>
+
+  <!-- 商品列表 -->
+  <view class="list">
+    <view class="item" wx:for="{{goods}}" wx:key="inde">
+      <goods3 detail="{{item}}" imgPre="{{imgPre}}"></goods3>
+    </view>
+  </view>
+
+</view>

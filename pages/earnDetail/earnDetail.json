@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "拼团详情",
+  "usingComponents": {
+    "goods2": "/components/goods2/goods2"
+  }
+}

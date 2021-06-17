@@ -1,0 +1,141 @@
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding-bottom: 6rpx;
+  padding: 0 3%;
+  box-sizing: border-box;
+  z-index: 999;
+  background: #f64664;
+}
+
+.navbar>.box {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar>.box>.img {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.navbar>.box>.title {
+  color: #fff;
+  font-weight: 400;
+  font-size: 26rpx;
+}
+
+.total {
+  background: #f64664;
+  color: #fff;
+  padding: 50rpx;
+  box-sizing: border-box;
+}
+
+.total>.op {
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: underline;
+}
+
+
+.total>.money {
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+.total>.money>.num {
+  font-size: 60rpx;
+}
+
+.list {
+  border-top: 20rpx solid #f8f8f8;
+}
+
+.list>.title {
+  font-size: 34rpx;
+  font-weight: 500;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.list>.li {
+  border-top: 1rpx solid #ececec;
+  padding: 30rpx 50rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list>.li>.l>.tag {
+  font-size: 28rpx;
+}
+
+.list>.li>.l>.time {
+  color: #999;
+  margin-top: 4rpx;
+}
+
+.list>.li>.num {
+  font-size: 36rpx;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1rpx solid #ececec;
+  z-index: 100;
+}
+
+.footer>.fbox {
+  height: 60rpx;
+  line-height: 60rpx;
+  margin: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.footer>.fbox>.l {
+  width: 28%;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  border-right: 1rpx solid #ececec;
+}
+
+.footer>.fbox>.l .picker{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer>.fbox>.l .picker>.img {
+  width: 27rpx;
+  height: 20rpx;
+  margin-left: 5rpx;
+  line-height: 0;
+}
+
+.footer>.fbox>.r {
+  padding-left: 40rpx;
+  box-sizing: border-box;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer>.fbox>.r>view>span {
+  color: #F10000;
+}

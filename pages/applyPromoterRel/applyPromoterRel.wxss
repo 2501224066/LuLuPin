@@ -1,0 +1,56 @@
+.apply-promoter-rel {
+  border-top: 20rpx solid #f8f8f8;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  width: 224rpx;
+  height: 224rpx;
+}
+
+.title {
+  font-size: 32rpx;
+  margin-top: 60rpx;
+}
+
+.tag {
+  width: 400rpx;
+  text-align: center;
+  color: #999;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10rpx 40rpx;
+  box-sizing: border-box;
+  background: #fff;
+  z-index: 100;
+}
+
+.footer>.fbox {
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.save{
+  flex: 1;
+  height: 95rpx;
+  line-height: 95rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+  background: #F74E6F;
+  font-weight: 300;
+  border-radius: 48rpx;
+}

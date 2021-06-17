@@ -1,0 +1,76 @@
+<!-- 工具 -->
+<wxs src="../../utils/index.wxs" module="util"></wxs>
+
+<view class="car">
+  <view wx:if="{{list.length == 0}}" class="null">
+    
+
+    <view class="img">
+      <image src="https://pin.giftfond.cn/icon/carNull.png"></image>
+    </view>
+    <view>购物车还是空的哦~</view>
+    <view class="guang" bindtap="toMake">去逛逛</view>
+
+
+  </view>
+  <view wx:else class="list">
+    <view class="item" wx:for="{{list}}" wx:key="index" bindtouchmove="touchMove" bindtouchstart="touchstart"
+      style="left:{{item.moveSpace ? item.moveSpace : 0}}px" data-index="{{index}}">
+      <view class="l">
+        <radio wx:if="{{util.indexOf(checkoutId, item.id) > -1}}" color="#F93C4C" checked="true" bindtap="unCheckout"
+          data-id="{{item.id}}" />
+        <radio wx:else color="#F93C4C" bindtap="checkout" data-id="{{item.id}}" />
+      </view>
+      <view class="goods">
+        <view class="img" bindtap="to" data-url="/pages/pointsGoodsDetail/pointsGoodsDetail?id={{item.goods_id}}">
+          <view class="discount" wx:if="{{item.tags}}">{{item.tags}}</view>
+          <image src="{{imgPre}}{{item.image_thumb}}" mode="aspectFill"></image>
+        </view>
+        <view class="content">
+          <view class="title" bindtap="to" data-url="/pages/pointsGoodsDetail/pointsGoodsDetail?id={{item.goods_id}}">
+            <span wx:if="{{item.home_push}}">推荐</span> {{util.strHid(item.goods_name, 18)}}
+          </view>
+          <view class="specs">规格：{{item.specifications}}</view>
+          <view class="down">
+            <view class="price"><span>¥</span>{{util.toFixed(item.price, 2)}}</view>
+            <view class="num">
+              <view class="reduce" catchtap="down" data-index="{{index}}">-</view>
+              <input type="number" maxlength="4" value="{{item.number}}" bindblur="numInput" data-index="{{index}}" />
+              <view class="add" catchtap="up" data-index="{{index}}">+</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="remove" bindtap="remove" data-index="{{index}}" data-id="{{item.id}}">
+        删除
+      </view>
+    </view>
+    <view class="tips">向左滑动删除商品</view>
+  </view>
+</view>
+
+<!-- 底部浮动栏目 -->
+<view class="footer" style="height:110rpx">
+  <view class="fbox">
+    <view class="l">
+      <radio wx:if="{{list.length === 0}}" color="#F93C4C" disabled="true" />
+      <radio wx:if="{{checkoutId.length > 0 && checkoutId.length == list.length}}" color="#F93C4C" checked="true"
+        bindtap="allUncheckout" />
+      <radio wx:if="{{checkoutId.length != list.length}}"  color="#F93C4C" bindtap="allCheckout" />
+      <view>全选</view>
+    </view>
+    <view class="r">
+      <view class="price">
+        <view>合计：<span>￥{{util.toFixed(total, 2)}}</span> </view>
+        <view class="tag">不含运费</view>
+      </view>
+      <view class="sub" wx:if="{{checkoutId.length > 0}}" bindtap="to"
+        data-url="/pages/pointsConfirm/pointsConfirm?carId=0">选好了({{checkoutId.length}})</view>
+      <view class="sub" wx:else>选好了({{checkoutId.length}})</view>
+    </view>
+  </view>
+</view>
+<view style="height:110rpx;"></view>
+
+<!-- 购物车数量 -->
+<carNum></carNum>

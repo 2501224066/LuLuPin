@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "商品分类",
+  "navigationBarBackgroundColor": "#f3f5fa",
+  "usingComponents": {
+    "goods4": "/components/goods4/goods4"
+  }
+}

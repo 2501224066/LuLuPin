@@ -1,0 +1,30 @@
+<view class="help">
+  <view class="box shadow" wx:for="{{list}}" wx:key="*this">
+    <view class="top" bindtap="setTab" data-index="{{index}}">
+      <view>{{item.title}}</view>
+      <view class="img">
+        <image wx:if="{{index == tab}}" src="/image/up.png" mode="aspectFill"></image>
+        <image wx:else src="/image/down.png" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view class="text" wx:if="{{index == tab}}">
+      <rich-text nodes="{{item.content}}"></rich-text>
+    </view>
+  </view>
+
+  <!-- 协议导航 -->
+  <view class="box shadow">
+    <view class="top" bindtap="setTab" data-index="agreement">
+      <view>相关协议与说明</view>
+      <view class="img">
+        <image wx:if="{{index == 'agreement'}}" src="/image/up.png" mode="aspectFill"></image>
+        <image wx:else src="/image/down.png" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view class="text" wx:if="{{tab == 'agreement'}}">
+      <view bindtap="to" data-url="/pages/agreement/agreement">法律声明及隐私协议</view>
+      <view bindtap="to" data-url="/pages/noPyramid/noPyramid">禁止传销条例</view>
+      <view bindtap="to" data-url="/pages/serviceNote/serviceNote">lulu拼用户服务协议</view>
+    </view>
+  </view>
+</view>

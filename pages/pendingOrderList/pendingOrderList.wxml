@@ -1,0 +1,40 @@
+<!-- 工具 -->
+<wxs src="../../utils/index.wxs" module="util"></wxs>
+<view wx:if="{{list.length == 0}}" class="order_no">
+  <view class="order_img">
+      <image src="https://pin.giftfond.cn/icon/order_img.png"></image>
+</view>
+<view>暂无新订单</view>
+
+</view>
+<view wx:else class="order">
+  <view class="list" wx:for="{{list}}" wx:key="index">
+    <view class="top" wx:for="{{item.detail}}" wx:key="index" wx:for-item="value">
+      <view class="img">
+        <image wx:if="{{item.buy_type == 3}}" src="{{imgPre}}{{value.goods_img}}" mode="aspectFill"></image>
+        <image wx:else src="{{value.goods_img}}" mode="aspectFill"></image>
+      </view>
+      <view class="center">
+        <view class="title">{{util.strHid(value.goods_name, 45)}}</view>
+        <view class="price">¥ {{ util.toFixed(value.money, 2) }}<span>x{{value.number}}</span></view>
+      </view>
+      <view class="status green" wx:if="{{value.status == 1}}">待付款</view>
+      <view class="status" wx:if="{{value.status == 2}}">待发货</view>
+      <view class="status" wx:if="{{value.status == 3}}">已发货</view>
+      <view class="status" wx:if="{{value.status == 4}}">已完成</view>
+      <view class="status red" wx:if="{{value.status == 0}}">已取消</view>
+    </view>
+
+  
+
+
+    <view class="down">
+      <view class="time">{{item.created_at}}</view>
+      <view class="r">
+        <view class="buy" wx:if="{{item.status == 2}}" bindtap="to" data-url="/pages/orderSend/orderSend?id={{item.id}}">发货</view>
+        <view class="see" bindtap="to" data-status="{{item.status}}"
+          data-url="/pages/orderDetail/orderDetail?id={{item.id}}">查看订单</view>
+      </view>
+    </view>
+  </view>
+</view>

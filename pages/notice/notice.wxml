@@ -1,0 +1,7 @@
+<view class="notice">
+  <view class="box">
+    <view class="title">{{detail.title}}</view>
+    <view class="content"><rich-text nodes="{{detail.content}}"></rich-text></view>
+    <view class="time">发布于 {{detail.create_at}}</view>
+  </view>
+</view>

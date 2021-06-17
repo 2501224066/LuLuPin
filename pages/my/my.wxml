@@ -1,0 +1,185 @@
+<!-- 工具 -->
+<wxs src="../../utils/index.wxs" module="util"></wxs>
+
+<view class="my">
+  <!-- 导航栏 -->
+  <view class="navbar" style="height:{{navHeight}}px; padding-top:{{navTop}}px">
+    <view class="img"></view>
+    <view>我的</view>
+    <view class="img"></view>
+  </view>
+  <view class="navbar-brace" style="height:{{navHeight}}px"></view>
+
+  <view class="top">
+    <!-- 背景圆 -->
+    <view class="bg"></view>
+    <!-- 头像 -->
+    <view class="header">
+      <view class="l">
+        <view class="img">
+          <image src="{{userInfo.avatarUrl ? userInfo.avatarUrl : '/image/header.png'}}" mode="aspectFill">
+          </image>
+        </view>
+        <view class="name">
+          <view class="text" wx:if="{{userInfo}}">{{userInfo.nickName}}</view>
+          <view class="text" wx:else>暂未登录</view>
+          <view class="phone">
+            <view class="img">
+              <image src="/image/phone.png" mode="aspectFill"></image>
+            </view>
+            <view>{{userInfo ? userInfo.phone : '未绑定手机号码'}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="r">
+        <view class="img" bindtap="to" data-url="/pages/setting/setting">
+          <image src="/image/set.png" mode="aspectFill"></image>
+        </view>
+        <view class="img">
+         
+        <button style="width:56rpx;background:url(https://pin.giftfond.cn/icon/kf1.gif);height:56rpx;background-repeat:no-repeat;background-size:contain" type='default' session-from='{"nickName":"{{userInfo.nickName}}","avatarUrl":"{{userInfo.avatarUrl}}"}' open-type="contact" ><image src="/image/set.png" mode="aspectFill"></image></button>
+     
+        </view>
+      
+      </view>
+    </view>
+    <!-- 账户 -->
+    <view class="account shadow">
+      <view bindtap="to" data-url="/pages/wallet/wallet">
+        <view>{{util.toFixed(money,2)}}</view>
+        <view>账户余额 <span>></span></view>
+      </view>
+      <view bindtap="to" data-url="/pages/pointsList/pointsList">
+        <view>{{util.toFixed(point,2)}}</view>
+        <view>购物币 <span>></span></view>
+      </view>
+      <view>
+        <view>{{invite}}</view>
+        <view>邀请人数</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 订单 -->
+  <view class="order">
+    <view class="title">
+      <view>我的订单</view>
+      <view class="go" bindtap="to" data-url="/pages/order/order" data-tab="0">全部订单</view>
+    </view>
+    <view class="list">
+      <view class="li" bindtap="to" data-url="/pages/order/order" data-tab="1">
+        <view class="img">
+          <image src="https://pin.giftfond.cn/icon/order1.png" mode="aspectFill"></image>
+        </view>
+        <view>待付款</view>
+      </view>
+      <view class="li" bindtap="to" data-url="/pages/order/order" data-tab="2">
+        <view class="img">
+          <image src="https://pin.giftfond.cn/icon/order2.png" mode="aspectFill"></image>
+        </view>
+        <view>待发货</view>
+      </view>
+      <view class="li" bindtap="to" data-url="/pages/order/order" data-tab="3">
+        <view class="img">
+          <image src="https://pin.giftfond.cn/icon/order3.png" mode="aspectFill"></image>
+        </view>
+        <view>已发货</view>
+      </view>
+      <view class="li" bindtap="to" data-url="/pages/order/order" data-tab="4">
+        <view class="img">
+          <image src="https://pin.giftfond.cn/icon/order4.png" mode="aspectFill"></image>
+        </view>
+        <view>已完成</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 推广员 -->
+  <!-- 推广员 -->
+  <view class="extension">
+    <image wx:if="{{isPromoter}}" src="https://pin.giftfond.cn/icon/extension2.png" mode="widthFix" bindtap="to" data-url="/pages/promoter/promoter"></image>
+    <image wx:else src="https://pin.giftfond.cn/icon/extension1.png" mode="widthFix"  bindtap="to" data-url="/pages/applyPromoter/applyPromoter"></image>
+  </view>
+
+  <!-- 跳转 -->
+  <view class="dump shadow">
+   
+   <view class="li" bindtap="to" data-url="/pages/myEarn/myEarn">
+      <view class="img">
+        <image src="/image/flow1.png" mode="aspectFill"></image>
+      </view>
+      <view class="text">拼团记录</view>
+      <view class="img2">
+        <image src="/image/right2.png" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view class="li" bindtap="to" data-url="/pages/collection/collection">
+      <view class="img">
+        <image src="/image/unfollow.png" mode="aspectFill"></image>
+      </view>
+      <view class="text">我的收藏</view>
+      <view class="img2">
+        <image src="/image/right2.png" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view class="li" bindtap="to" data-url="/pages/address/address">
+      <view class="img">
+        <image src="/image/address.png" mode="aspectFill"></image>
+      </view>
+      <view class="text">我的地址</view>
+      <view class="img2">
+        <image src="/image/right2.png" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view class="li" bindtap="to" data-url="/pages/ruleExplain/ruleExplain">
+      <view class="img">
+        <image src="/image/rule2.png" mode="aspectFill"></image>
+      </view>
+      <view class="text">规则说明</view>
+      <view class="img2">
+        <image src="/image/right2.png" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view class="li" bindtap="to" data-url="/pages/help/help">
+      <view class="img">
+        <image src="/image/help.png" mode="aspectFill"></image>
+      </view>
+      <view class="text">帮助中心</view>
+      <view class="img2">
+        <image src="/image/right2.png" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view class="li" bindtap="to" data-url="/pages/aboutWe/aboutWe">
+      <view class="img">
+        <image src="/image/about.png" mode="aspectFill"></image>
+      </view>
+      <view class="text">关于我们</view>
+      <view class="img2">
+        <image src="/image/right2.png" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view class="li" bindtap="to" data-url="/pages/contact/contact">
+      <view class="img">
+        <image src="/image/kefu.png" mode="aspectFill"></image>
+      </view>
+      <view class="text">商务合作</view>
+      <view class="img2">
+        <image src="/image/right2.png" mode="aspectFill"></image>
+      </view>
+    </view>
+    
+  </view>
+</view>
+
+<!-- 版权 -->
+<copyright></copyright>
+
+<!-- 购物车数量 -->
+<carNum></carNum>
+
+<!-- 发货 -->
+<view class="send shadow" bindtap="to" data-url="/pages/pendingOrderList/pendingOrderList" wx:if="{{isAdmin}}">
+  <view class="img">
+    <image src="/image/send.png" mode="aspectFill"></image>
+  </view>
+</view>

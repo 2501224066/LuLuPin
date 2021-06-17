@@ -1,0 +1,47 @@
+<!-- 工具 -->
+<wxs src="../../utils/index.wxs" module="util"></wxs>
+
+<view class="goods">
+  <view class="list">
+    <view class="li"  bindtap="to" data-url="/pages/goodsDetail/goodsDetail?id={{detail.id}}&groupId=0">
+      <view class="photo">
+        <view class="tag-img">
+          <image src="/image/tag.png" mode="aspectFill"></image>
+        </view>
+        <view class="tag-title">{{detail.help_people_num}}人团</view>
+        <view class="img">
+          <image src="{{detail.image_thumb}}" mode="aspectFill">
+          </image>
+        </view>
+      </view>
+      <view class="detail">
+        <view class="title">
+          {{util.strHid(detail.name, 35)}}
+        </view>
+        <view class="down">
+          <view class="l">
+            <view class="price">
+              <view class="p1">拼团价</view>
+              <view class="p2">¥</view>
+              <view class="p3">{{detail.active_price}}</view>
+              <view class="p4">￥{{detail.price_origin}}</view>
+            </view>
+            <view class="people">
+              <view class="img" wx:for="{{detail.active}}" wx:key="id" wx:for-item="v" wx:for-index="k" wx:if="{{k<5}}">
+                <image src="{{v}}" mode="aspectFill"></image>
+              </view>
+              <view class="has">已拼{{detail.count}}个团</view>
+            </view>
+          </view>
+          <view wx:if="1" class="btn" style="background: #F74E6F;">查看拼团</view>
+          <view wx:else class="btn" style="background: #C6C6C6;">已结束</view>
+        </view>
+      </view>
+    </view>
+    <view class="label">
+      <view>中签得 {{detail.point}} 购物币</view>
+      <view>未中签得 ¥ {{detail.factory_subsidy}}</view>
+      <view>团长额外得 ¥ {{detail.chief_subsidy}}</view>
+    </view>
+  </view>
+</view>

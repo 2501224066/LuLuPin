@@ -1,0 +1,78 @@
+.commission-list{
+  border-top:20rpx solid #f8f8f8;
+}
+
+.list>.item {
+  padding: 25rpx 60rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid #ececec;
+  font-size: 27rpx;
+}
+
+.list>.item .time {
+  color: #949494;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+
+
+.list>.item .price {
+  color: #309A01;
+  font-size: 35rpx;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1rpx solid #ececec;
+  z-index: 100;
+}
+
+.footer>.fbox {
+  height: 60rpx;
+  line-height: 60rpx;
+  margin: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.footer>.fbox>.l {
+  width: 28%;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  border-right: 1rpx solid #ececec;
+}
+
+.footer>.fbox>.l .picker{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer>.fbox>.l .picker>.img {
+  width: 27rpx;
+  height: 20rpx;
+  margin-left: 5rpx;
+  line-height: 0;
+}
+
+.footer>.fbox>.r {
+  padding-left: 40rpx;
+  box-sizing: border-box;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.footer>.fbox>.r>view>span {
+  color: #F10000;
+}

@@ -1,0 +1,88 @@
+.goods3{
+  width: 100%;
+  background: #fff;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+
+.goods3>.img {
+  border-radius: 6rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.goods3>.img>.discount {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  color: #fff;
+  background: #F93C4C;
+  font-size: 19rpx;
+  padding: 5rpx 12rpx;
+  border-radius: 0 0 20rpx 0;
+}
+
+.goods3>.content {
+  padding: 4%;
+}
+
+.goods3>.content>.title {
+  font-size: 24rpx;
+  height: 70rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.goods3>.content>.title>span {
+  background: #f9483e;
+  color: #fff;
+  font-size: 22rpx;
+  padding: 0rpx 7rpx;
+  border-radius: 6rpx;
+  position: relative;
+  
+  left: 0;
+  margin-right: 10rpx;
+}
+
+.goods3>.content>.num {
+  font-size: 21rpx;
+  color: #8E8E8E;
+  margin: 10rpx 0;
+}
+
+.goods3>.content>.down {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goods3>.content>.down>.price {
+  color: #E24444;
+  font-size: 28rpx;
+  font-weight:700;
+}
+
+.goods3>.content>.down>.price>span {
+  font-size: 21rpx;
+  margin-right: 5rpx;
+}
+
+.goods3>.content>.down>.add {
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.bline {
+  text-decoration: line-through;
+  font-size: 20rpx;
+  color: #999;
+  font-weight: 500;
+  margin-left: 10rpx;
+}

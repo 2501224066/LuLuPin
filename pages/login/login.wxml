@@ -1,0 +1,29 @@
+<view class="login">
+  <!-- 导航栏 -->
+  <view class="navbar" style="height:{{navHeight}}px; padding-top:{{navTop}}px">
+    <view class="box">
+      <view class="img" bindtap="toHome">
+        <image src="/image/back-home.png" mode="aspectFill"></image>
+      </view>
+      <view>登录</view>
+      <view class="img"></view>
+    </view>
+  </view>
+  <view class="navbar-brace" style="height:{{navHeight}}px"></view>
+
+  <view class="bg">
+    <image src="/image/bg.jpeg" mode="aspectFill"></image>
+  </view>
+  <view class="logo">
+    <image src="/image/logo.png" mode="aspectFill"></image>
+  </view>
+  <view class="title">lulu拼</view>
+
+  <view class="agree" bindtap="agree">
+    <radio wx:if="{{agree}}" checked="true"/>
+    <radio wx:else/>
+    <view class="text">同意lulu拼<span catchtap="to" data-url="/pages/agreement/agreement">《法律声明及隐私政策》</span></view>
+  </view>
+  <button wx:if="{{agree}}" class="sub" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">微信一键登录</button>
+  <view wx:else class="sub" bindtap="noAgree">微信一键登录</view>
+</view>

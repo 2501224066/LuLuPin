@@ -1,0 +1,38 @@
+<view class="make">
+  <view wx:if="{{keyword}}">
+    <view class="keyword">
+      <view class="l">
+        <view>关键字：<span>{{tabList[tabIndex]}}</span><span>{{keyword}}</span></view>
+      </view>
+      <view class="img" bindtap="close">
+        <image src="/image/close2.png" mode="aspectFill"></image>
+      </view>
+    </view>
+  </view>
+
+  <view wx:else>
+    <!-- TAB -->
+    <view class="tab">
+      <view wx:for="{{tabList}}" wx:key="*this" class="{{tabIndex == index ? 'selected' :''}}" bindtap="checkoutTab"
+        data-index="{{index}}">{{item}}</view>
+    </view>
+
+    <!-- 搜索 -->
+    <view class="search">
+      <view class="input">
+        <input type="text" placeholder="搜索您心仪的商品" value="{{keyword}}" bindblur="setKeyword" />
+        <view class="img">
+          <image src="/image/search2.png" mode="aspectFill"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:for="{{list}}" wx:key="*this">
+    <!-- 商品 -->
+    <goods detail="{{item}}"></goods>
+  </view>
+</view>
+
+<!-- 购物车数量 -->
+<carNum></carNum>

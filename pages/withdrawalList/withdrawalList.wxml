@@ -1,0 +1,41 @@
+<!-- 工具 -->
+<wxs src="../../utils/index.wxs" module="util"></wxs>
+
+<view class="withdawa-list">
+  <!-- tab -->
+  <view class="tab">
+    <view class="{{tabIndex == index ? 'sel' : ''}}" wx:for="{{tab}}" wx:key="index" bindtap="checkoutTab"
+      data-index="{{index}}">{{item.name}}</view>
+  </view>
+
+  <!-- 列表 -->
+  <view class="list">
+    <view class="item" wx:for="{{list}}" wx:key="index">
+      <view>
+        <view>余额提现</view>
+        <view class="time">{{item.created_at}}</view>
+      </view>
+      <view class="price">¥ {{util.toFixed(item.recharge_price, 2)}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 底部浮动栏目 -->
+<view class="footer" style="height:{{iphoneFooter ? 138 : 100}}rpx">
+  <view class="fbox">
+    <view class="l">
+      <picker bindchange="bindPickerChange" value="{{dateIndex}}" range="{{date}}">
+        <view class="picker">
+          {{date[dateIndex]}}
+          <view class="img">
+            <image src="/image/up.png" mode="aspectFill"></image>
+          </view>
+        </view>
+      </picker>
+    </view>
+    <view class="r">
+      <view>合计：<span>¥ {{util.toFixed(total, 2)}}</span></view>
+    </view>
+  </view>
+</view>
+<view style="height:{{iphoneFooter ? 138 : 100}}rpx;margin-top:10vh"></view>

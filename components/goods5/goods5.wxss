@@ -1,0 +1,39 @@
+.goods5 {
+  width: 100%;
+  height: 171rpx;
+  display: flex;
+  align-items: center;
+}
+
+.goods5>.img {
+  width: 139rpx;
+  height: 139rpx;
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+
+.goods5>.content {
+  flex: 1;
+  height: 139rpx;
+  margin-left: 29rpx;
+  font-size: 25rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.goods5>.content>.price {
+  color: #FA5161;
+  font-size: 31rpx;
+}
+
+.goods5>.content>.specs {
+  font-size: 25rpx;
+  color: #7A7A7A;
+}
+
+.goods5>.content>.price>span {
+  font-size: 25rpx;
+  color: #7A7A7A;
+  margin-left: 25rpx;
+}

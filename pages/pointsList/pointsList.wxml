@@ -1,0 +1,62 @@
+<!-- 工具 -->
+<wxs src="../../utils/index.wxs" module="util"></wxs>
+
+<view class="wallet">
+  <!-- 导航栏 -->
+  <view class="navbar"
+    style="height:{{navHeight}}px; padding-top:{{navTop}}px">
+    <view class="box">
+      <view class="img" bindtap="back">
+        <image src="/image/left1.png" mode="aspectFill"></image>
+      </view>
+      <view class="title">购物币明细</view>
+      <view class="img"></view>
+    </view>
+  </view>
+  <view class="navbar-brace" style="height:{{navHeight}}px"></view>
+
+  <!-- 余额 -->
+  <view class="total">
+    <view class="money">
+      <view class="num">{{util.toFixed(total,2)}}</view>
+      <view>购物币余额</view>
+    </view>
+  </view>
+
+  <!-- 明细 -->
+  <view class="list">
+    <view class="title">购物币明细</view>
+    <view class="li" wx:for="{{list}}" wx:key="*this">
+      <view class="l">
+        <view class="tag">{{item.remark}}</view>
+        <view class="time">{{item.created_at}}</view>
+      </view>
+      <view class="num" style="color: {{item.is_add ? '#309A01'  : '#f10000'}}">
+        <span wx:if="{{item.is_add}}">+</span>
+        <span wx:else>-</span>
+        {{util.toFixed(item.wallet,2)}}
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 底部浮动栏目 -->
+<view class="footer" style="height:{{iphoneFooter ? 138 : 100}}rpx">
+  <view class="fbox">
+    <view class="l">
+      <picker bindchange="bindPickerChange" value="{{dateIndex}}" range="{{date}}">
+        <view class="picker">
+          {{date[dateIndex]}}
+          <view class="img">
+            <image src="/image/up.png" mode="aspectFill"></image>
+          </view>
+        </view>
+      </picker>
+    </view>
+    <view class="r">
+      <view>累计收入：<span>{{util.toFixed(entry,2)}}</span></view>
+      <view>支出：<span>{{util.toFixed(out,2)}}</span></view>
+    </view>
+  </view>
+</view>
+<view style="height:{{iphoneFooter ? 138 : 100}}rpx;margin-top:10vh"></view>

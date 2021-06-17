@@ -1,0 +1,106 @@
+<!-- 工具 -->
+<wxs src="../../utils/index.wxs" module="util"></wxs>
+
+<view class="lickDown">
+  <view class="content">
+
+    <!-- 结果 -->
+    <view class="res">
+      <view class="text">本期中奖号码</view>
+      <view class="num">
+        <view wx:for="{{detail.luck_key}}" wx:key="*this">{{item}}</view>
+      </view>
+      <view class="time">该拼团于<span class="red">{{d}}</span>天<span class="red">{{H}}</span>小时<span
+          class="red">{{i}}</span>分<span class="red">{{s}}</span>秒后结束</view>
+    </view>
+
+    <!-- 号码-全翻开 -->
+    <view class="code" wx:if="{{openList.length == list.length}}">
+      <!-- 全翻开 -->
+      <view wx:for="{{list}}" wx:key="*this" class="list {{util.indexOf(detail.luck_key, item) > -1 ? 'checkout' : ''}}"
+        style="font-size: 60rpx">
+        <!-- 标签 -->
+        <view class="tag" wx:if="{{util.indexOf(detail.luck_key, item) > -1}}">中签</view>
+        <view class="tag" wx:if="{{self == item}}">我</view>
+        <!-- 牌面 -->
+        <view class="text">{{item}}</view>
+      </view>
+    </view>
+
+    <!-- 号码-未全翻开-->
+    <view class="code" wx:else>
+      <!-- 全翻开 -->
+      <view wx:for="{{list}}" wx:key="*this"
+        class="list {{util.indexOf(detail.luck_key, item) > -1 && util.indexOf(openList,item) > -1 && self == item ? 'checkout' : ''}}"
+        style="font-size: 30rpx">
+        <!-- 标签 -->
+        <view class="tag" wx:if="{{self == item}}">我</view>
+        <!-- 牌面 -->
+        <view class="text" style="font-size: 60rpx" wx:if="{{util.indexOf(openList,item) > -1 && self == item}}">
+          {{item}}</view>
+        <view class="text" style="color:#ccc" wx:if="{{util.indexOf(openList,item) > -1 && self != item}}">已刮</view>
+        <view class="text" wx:if="{{util.indexOf(openList,item) == -1}}" bindtap="open" data-num="{{item}}">点击刮开</view>
+      </view>
+    </view>
+
+    <!-- 参团特权 -->
+    <view class="join">
+      <view class="title">参团特权</view>
+      <view class="text shadow">
+        参团中签可获得购物币 <span>{{detail.point}}点</span> ，未中签再获得
+        <span>{{util.toFixed(detail.factory_subsidy, 2)}}元</span> 厂商现金补贴， 团长额外获得
+        <span>{{util.toFixed(detail.chief_subsidy, 2)}}元</span>补贴金。
+      </view>
+    </view>
+
+    <!-- 规则说明 -->
+    <view class="rule">
+      <view class="title">规则说明</view>
+      <view class="text shadow">
+        <view>1、该拼团需<span class="red">{{detail.position.length}}</span>人参与，其中<span
+            class="red">{{detail.luck_key.length}}</span>人可获拼得商品；</view>
+        <view>2、参与拼团支付成功后，刮开上方卡片获得中签号码；</view>
+        <view>3、获得的号码与开奖号码中任意一位一致即为中签，中签后可获得<span class="red">拼团商品</span>和<span class="red">{{detail.point}}购物币</span>；
+        </view>
+        <view>4、未中签者，拼团人满结束后，原路退回参团款项，同时获得<span class="red">￥{{util.toFixed(detail.factory_subsidy,
+            2)}}元</span>厂商补贴金，团长额外获得<span class="red">￥{{util.toFixed(detail.chief_subsidy, 2)}}元</span>补贴金。</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 底部浮动栏目 -->
+<view class="footer" style="height:{{iphoneFooter ? 154 : 120}}rpx">
+  <view class="fbox">
+    <view class="btn1" bindtap="toMake">拼团主页</view>
+    <view wx:if="{{(openList.length == list.length && overTime < nowTime)}}" class="btn3">已结束</view>
+    <button wx:else class="btn2" open-type="share">邀请好友参团</button>
+  </view>
+</view>
+<view style="height:{{iphoneFooter ? 154 : 120}}rpx;margin-top:10vh"></view>
+
+<!-- 抽中号码 -->
+<view class="rel" wx:if="{{relShow}}">
+  <view class="box">
+    <view class="bg">
+    <image src="/image/rel.png" mode="aspectFill"></image>
+  </view>
+    <view class="close" bindtap="relClose">X</view>
+    <view style="margin-top:250rpx;font-size:24rpx;">您刮的中签码是</view>
+    <view class="num">{{self}}</view>
+    <view style="font-weight:800;color: #4a3307;" wx:if="{{util.indexOf(detail.luck_key, self) > -1}}">恭喜，您已中签！</view>
+    <view style="font-weight:800;color: #4a3307;" wx:else>很遗憾，您未中签！</view>
+  </view>
+</view>
+
+<!-- 提示 -->
+<view class="tips" wx:if="{{tipsShow}}">
+  <view class="box">
+    <view>点击上方卡片抽签</view>
+    <view class="memo">未抽中立即退款，得现金红包</view>
+    <view class="img">
+      <image src="/image/tips.png" mode="aspectFill"></image>
+    </view>
+    <view class="close" bindtap="tipsClose">我知道了</view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "确认订单",
+  "usingComponents": {
+    "goods5": "/components/goods5/goods5"
+  }
+}

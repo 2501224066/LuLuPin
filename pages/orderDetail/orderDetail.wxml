@@ -1,0 +1,116 @@
+<!-- 工具 -->
+<wxs src="../../utils/index.wxs" module="util"></wxs>
+
+<view class="order-detail">
+  <view class="line" wx:if="{{detail.status == 1}}">
+    <view class="title weight">订单待付款</view>
+    <view class="center" style="color:#E30000">剩余：{{d}}天{{H}}时{{i}}分{{s}}秒</view>
+  </view>
+
+  <view class="line" wx:if="{{detail.status == 2}}">
+    <view class="title weight">订单待发货</view>
+  </view>
+
+  <view class="line" wx:if="{{detail.status == 3}}">
+    <view class="title weight">订单已发货</view>
+    <view class="center">快递单号：{{detail.expr_no}}</view>
+  </view>
+
+  <view class="line" wx:if="{{detail.status == 4}}">
+    <view class="title weight">订单已完成</view>
+    <view class="center">快递单号：{{detail.expr_no}}</view>
+  </view>
+
+  <view class="line" wx:if="{{detail.status == 0}}">
+    <view class="title weight">订单已取消</view>
+    <view class="center" style="color:#E30000">取消原因：付款超时</view>
+  </view>
+
+  <view class="goods">
+    <view class="item" wx:for="{{detail.detail}}" wx:key="index">
+      <view class="img">
+        <image wx:if="{{detail.buy_type != 3}}" src="{{item.goods_img}}" mode="aspectFill"></image>
+        <image wx:else src="{{imgPre}}{{item.goods_img}}" mode="aspectFill"></image>
+      </view>
+      <view class="title">
+        <view class="text">{{item.goods_name}}</view>
+        <view>规格：{{item.goods_attr1}},{{item.goods_attr2}}</view>
+      </view>
+      <view class="price">
+        <view class="text">{{util.toFixed(item.money, 2)}}</view>
+        <view>x{{item.number}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="line top">
+    <view class="title weight">收货信息</view>
+  </view>
+
+  <view class="line">
+    <view class="title">
+      <view>配送地址</view>
+    </view>
+    <view class="center">{{detail.street}}</view>
+  </view>
+
+  <view class="line">
+    <view class="title">电话</view>
+    <view class="center">{{detail.mobile}}</view>
+  </view>
+
+  <view class="line">
+    <view class="title">收货人</view>
+    <view class="center">{{detail.contact}}</view>
+  </view>
+
+  <view class="line top">
+    <view class="title weight">订单信息</view>
+  </view>
+
+  <view class="line">
+    <view class="title">创建时间</view>
+    <view class="center">{{detail.created_at}}</view>
+  </view>
+
+  <view class="line">
+    <view class="title">订单编号</view>
+    <view class="center">{{detail.order_no}}</view>
+  </view>
+
+  <view class="line">
+    <view class="title">购物币抵扣</view>
+    <view class="center" style="color:#E30000">- {{util.toFixed(detail.integral_price,2)}} 元</view>
+  </view>
+
+  <view class="line">
+    <view class="title">余额使用</view>
+    <view class="center" style="color:#E30000">- {{util.toFixed(detail.coun_mony,2)}} 元</view>
+  </view>
+
+  <view class="line">
+    <view class="title">运费</view>
+    <view class="center" style="color:#E30000">{{util.toFixed(detail.freight_price,2)}} 元</view>
+  </view>
+
+  <view class="line">
+    <view class="title">实际支付</view>
+    <view class="center" style="color:#E30000">{{util.toFixed(detail.pay_money,2)}} 元</view>
+  </view>
+</view>
+
+
+<!-- 底部浮动栏目 -->
+<view class="footer" style="height:{{iphoneFooter ? 204 : 170}}rpx" wx:if="{{detail.status == 1}}">
+  <view class="fbox">
+    <view class="tag" wx:if="{{detail.buy_type != 3}}">团购商品均为正归渠道合格商品，非质量问题暂不支持退换货</view>
+    <view class="tag" wx:else>商城商品均为正归渠道合格商品，非质量问题暂不支持退换货</view>
+    <view class="content">
+      <view>合计：<span style="color:#FA4556">¥ {{util.toFixed(detail.pay_money,2)}}</span></view>
+      <view wx:if="{{detail.buy_type != 3}}"  class="btn" bindtap="to"
+        data-url="/pages/confirm/confirm?orderId={{detail.id}}&goodsId={{detail.detail[0].goods_id}}">立即支付</view>
+        <view wx:else  class="btn" bindtap="pointsPay" data-id="{{detail.id}}">立即支付</view>
+    </view>
+  </view>
+</view>
+<view style="height:{{iphoneFooter ? 204 : 170}}rpx" wx:if="{{detail.status == 1}}"></view>

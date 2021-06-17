@@ -1,0 +1,5 @@
+.copyright{
+  padding: 2vh 0;
+  text-align: center;
+  color: #999;
+}

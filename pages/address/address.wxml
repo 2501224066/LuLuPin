@@ -1,0 +1,43 @@
+<view class="address">
+  <view wx:if="{{list.length == 0}}" class="none">
+    <view class="img">
+      <image src="/image/no-address.png" mode="aspectFill"></image>
+    </view>
+    <view>还未添加地址</view>
+  </view>
+
+  <view wx:else class="list">
+    <view class="li" wx:for="{{list}}" wx:key="*this">
+      <view class="l">
+        <view class="name">
+          <view>
+            {{item.contact}}
+            <span wx:if="{{item.sex == 1}}"> 先生</span>
+            <span wx:if="{{item.sex == 2}}"> 女士</span>
+          </view>
+          <view>{{item.mobile}}</view>
+          <view class="img" bindtap="del" data-id="{{item.id}}" wx:if="{{!item.is_default}}">
+            <image src="/image/del.png" mode="aspectFill"></image>
+          </view>
+        </view>
+        <view class="down">
+          <view class="default" wx:if="{{item.is_default}}">默认</view>
+          <view class="address">{{item.province}}-{{item.city}}-{{item.area}} {{item.street}}</view>
+        </view>
+      </view>
+      <view class="r">
+        <view class="img" bindtap="to" data-url="/pages/editAddress/editAddress?id={{item.id}}">
+          <image src="/image/edit.png" mode="aspectFill"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 底部添加按钮 -->
+<view class="footer" style="height:{{iphoneFooter ? 154 : 130}}rpx">
+  <view class="fbox">
+    <view class="btn" bindtap="to" data-url="/pages/editAddress/editAddress">添加新地址</view>
+  </view>
+</view>
+<view style="height:{{iphoneFooter ? 154 : 130}}rpx;margin-top:10vh"></view>

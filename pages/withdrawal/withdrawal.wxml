@@ -1,0 +1,39 @@
+<!-- 工具 -->
+<wxs src="../../utils/index.wxs" module="util"></wxs>
+
+<view class="withdrawal">
+  <view class="balance">
+    <view class="title">可提现金额</view>
+    <view class="money">{{util.toFixed(hasPrice,2)}}元</view>
+  </view>
+
+  <view class="label">
+    <view class="img">
+      <image src="/image/wx.png"></image>
+    </view>
+    <view>提现到微信零钱</view>
+  </view>
+
+  <view class="price">
+    <view class="tag">¥</view>
+    <view class="num">
+      <input type="digit" placeholder-class="placeholder-class" placeholder="0.00" value="{{price}}" bindinput="setPrice"/>
+    </view>
+  </view>
+
+  <view class="memo">
+    <view class="title">用户须知</view>
+    <view class="li">根据腾讯官方支付规则，提现费率为<span>0.6%</span>，即100元手续费为0.6元；</view>
+    <view class="li">每次最低提现金额为<span>10元或10的整数倍数</span>；</view>
+    <view class="li">提现到账时间一般为<span>1-2小时</span>，如遇腾讯提现规则变化，则以官方时间为准；</view>
+    <view class="li">提现到账的账户为绑定的实名微信账户零钱钱包；</view>
+    <view class="li">如腾讯官方发生的周期或费率调整，本平台也会提前告知，并进行调整。</view>
+  </view>
+
+  <view class="agree">
+    <switch type="checkbox" checked="{{agree}}" bindchange="agree"/>
+    <view class="title">我已阅读并同意<span bindtap="to" data-url="/pages/outGreement/outGreement">《用户提现协议》</span></view>
+  </view>
+
+  <view class="sub" bindtap="sub">立即提现</view>
+</view>

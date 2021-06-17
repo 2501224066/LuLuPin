@@ -1,0 +1,16 @@
+<view class="poster">
+  <view wx:if="{{canvasTemppath}}" class="img" style="width:{{w}}px;height:{{w*1.8}}px">
+    <image src="{{canvasTemppath}}" mode="aspectFill"></image>
+  </view>
+  <!-- 海报 -->
+  <canvas type="2d" id="myCanvas" style="width:{{w}}px;height:{{w*1.8}}px"></canvas>
+</view>
+
+<!-- 底部浮动栏目 -->
+<view class="footer" style="height:{{iphoneFooter ? 153 : 115}}rpx">
+  <view class="fbox">
+    <view class="save" wx:if="{{canvasTemppath}}" bindtap="saveImg">保存到相册</view>
+    <view class="text" wx:else>正在生成海报...</view>
+  </view>
+</view>
+<view style="height:{{iphoneFooter ? 153 : 115}}rpx;"></view>

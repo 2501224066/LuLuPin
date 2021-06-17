@@ -1,0 +1,30 @@
+page {
+  background: #f8f8f8;
+}
+
+.points-push {
+  padding-bottom: 4vh;
+}
+
+.top {
+  padding: 20rpx 3%;
+}
+
+.img {
+  width: 100%;
+  height: 300rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+.list {
+  padding: 12rpx;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.list>.item {
+  margin: 12rpx;
+  width: 339rpx;
+}

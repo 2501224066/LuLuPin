@@ -1,0 +1,179 @@
+<!-- 工具 -->
+<wxs src="../../utils/index.wxs" module="util"></wxs>
+
+<view class="goods-detail">
+  <!-- 导航栏 -->
+  <view class="navbar"
+    style="height:{{navHeight}}px; padding-top:{{navTop}}px; background:{{navScrollTop > (domScrollTop - navHeight) ? '#fff' : ''}}">
+    <view class="box">
+      <view class="img">
+        <image src="/image/left.png" mode="aspectFill" bindtap="back"></image>
+      </view>
+    </view>
+  </view>
+
+  <!-- 轮播 -->
+  <view class="lb">
+    <swiper autoplay="true" indicator-dots="true" indicator-color="#000" indicator-active-color="#f73d4c">
+      <swiper-item wx:for="{{detail.goods.banners}}" wx:key="*this">
+        <image src="{{imgPre}}{{item}}" mode="aspectFill"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view class="box1" id="dom">
+    <!--标题-->
+    <view class="title">
+      <span wx:if="{{detail.goods.home_push}}">荐</span>
+      {{detail.goods.name}}
+    </view>
+
+    <!-- 标签  -->
+    <view class="tag">
+      可最多使用<span>{{util.toFixed(detail.goods.available_point,
+        2)}}购物币</span>抵扣<span>{{util.toFixed(detail.goods.ded_price, 2)}}元</span>
+    </view>
+
+    <!-- 价格 -->
+    <view class="price">
+      <view class="l">
+        <view><span>¥</span>{{detail.goods.price}}<span> / {{detail.goods.unit}}</span></view>
+        <view></view>
+        <view>¥ {{detail.goods.price_market}}</view>
+      </view>
+      <view class="sale">已售{{detail.goods.sale_num}}件</view>
+    </view>
+  </view>
+
+  <view class="box1" wx:if="{{detail.goods.promotion_status}}">
+    <!-- 推广 -->
+    <view class="push">
+      <view class="img">
+        <image src="/image/income.png" mode="aspectFill"></image>
+      </view>
+      <view style="font-size:28rpx">推荐好友购买此产品您可获得<span>￥{{util.toFixed(detail.goods.pro_price, 2)}}元</span>/件收入</view>
+    </view>
+  </view>
+
+  <view class="box2" style="border:0px">
+    <view class="title">
+      <view class="l">
+        <view>商品详情</view>
+      </view>
+    </view>
+
+    <!-- 富文本 -->
+    <view class="rich">
+      <rich-text nodes="{{detail.goods.content}}" space="nbsp"></rich-text>
+    </view>
+  </view>
+</view>
+
+<!-- 底部浮动栏目 -->
+<view class="footer" style="height:{{iphoneFooter ? 178 : 140}}rpx">
+  <view class="fbox">
+    <view class="f1" bindtap="toCar">
+      <view class="num">
+        <view>{{carNum}}</view>
+      </view>
+      <view class="icon">
+        <view class="img" bindtap="toCar">
+          <image src="/image/car2.png" mode="aspectFill"></image>
+        </view>
+        <view>购物车</view>
+      </view>
+    </view>
+    <view class="f1" bindtap="openShare">
+      <view class="icon">
+        <view class="img">
+          <image src="/image/share.png" mode="aspectFill"></image>
+        </view>
+        <view>分享</view>
+      </view>
+    </view>
+    <view class="f2">
+      <view bindtap="openSpecs" data-type="1">加入购物车</view>
+      <view bindtap="openSpecs" data-type="2">直接购买</view>
+    </view>
+  </view>
+</view>
+<view style="height:{{iphoneFooter ? 178 : 140}}rpx;"></view>
+
+<!-- 规格 -->
+<view class="specs" wx:if="{{specsShow}}">
+  <view class="box" style="padding-bottom:{{iphoneFooter ? 84 : 50}}rpx">
+    <!-- 关闭 -->
+    <view class="close">
+      <view class="img" bindtap="closeSpecs">
+        <image src="/image/close2.png" mode="aspectFill"></image>
+      </view>
+    </view>
+    <!-- 商品 -->
+    <view class="goods">
+      <view class="img">
+        <image src="{{imgPre}}{{detail.goods.banners[0]}}" mode="aspectFill"></image>
+      </view>
+      <view class="detail">
+        <view class="title">{{util.strHid(detail.goods.name, 34)}}</view>
+        <view class="price">
+          <view>¥ <span>{{skuPrice}}</span> / {{detail.goods.unit}}</view>
+          <view>库存：{{stock}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 数据 -->
+    <view class="list" wx:for="{{detail.sku}}" wx:key="*this">
+      <view class="tag">选择{{item.mame}}</view>
+      <view class="li">
+        <view class="{{util.indexOf(specsArr, v) > -1 ? 'checked' : ''}}" wx:for="{{item.val}}" wx:key="*this"
+          wx:for-item="v" data-name="{{v}}" data-arr="{{item.val}}" bindtap="checkedSpecs">{{v}}</view>
+      </view>
+    </view>
+    <!-- 数量 -->
+    <view class="list">
+      <view class="tag">选择数量</view>
+      <view class="op">
+        <view bindtap="numDown">-</view>
+        <view>
+          <input type="number" value="{{buyNum}}" bindblur="numInput" />
+        </view>
+        <view bindtap="numUp">+</view>
+        <view class="max">最多限购{{maxBuyNum}}份</view>
+      </view>
+    </view>
+    <!-- 按钮 -->
+    <view class="btn" wx:if="{{buyType == 1}}" bindtap="addCar">加入购物车</view>
+    <view class="btn2" wx:else bindtap="buy">直接购买</view>
+  </view>
+</view>
+
+<!-- 分享模态 -->
+<view class="share" wx:if="{{shareShow}}">
+  <view class="box" style="padding-bottom:{{iphoneFooter ? 84 : 50}}rpx">
+    <!-- 关闭 -->
+    <view class="close">
+      <view class="img" bindtap="closeShare">
+        <image src="/image/close2.png" mode="aspectFill"></image>
+      </view>
+    </view>
+    <!-- 分享方式 -->
+    <view class="type">
+      <button class="icon" open-type="share">
+        <view class="img">
+          <image src="/image/wx2.png"></image>
+        </view>
+        <view>发给好友</view>
+      </button>
+      <view class="icon">
+        <view class="img" bindtap="to" data-url="/pages/poster/poster?orderId={{id}}">
+          <image src="/image/photo.png"></image>
+        </view>
+        <view>生成海报</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="btn_top" bindtap="gotop">
+  <text class="btn-gotop" style="">顶部</text>
+</view>

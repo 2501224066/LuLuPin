@@ -1,0 +1,15 @@
+<view class="apply-promoter-rel">
+  <view class="img">
+    <image src="https://pin.giftfond.cn/icon/success.png" mode="aspectFill"></image>
+  </view>
+  <view class="title">恭喜，申请完成！</view>
+  <view class="tag">预计48小时内通知您审核结果 请留意微信消息通知</view>
+</view>
+
+<!-- 底部浮动栏目 -->
+<view class="footer" style="height:{{iphoneFooter ? 153 : 115}}rpx">
+  <view class="fbox">
+    <view class="save" bindtap="toMy">返回</view>
+  </view>
+</view>
+<view style="height:{{iphoneFooter ? 153 : 115}}rpx;"></view>

@@ -1,0 +1,27 @@
+<!-- 工具 -->
+<wxs src="../../utils/index.wxs" module="util"></wxs>
+
+<view class="promotion-order">
+  <!-- 列表 -->
+  <view class="list" wx:for="{{list}}" wx:key="index">
+    <view class="item">
+      <view class="header">
+        <view class="name">{{item.contact}}</view>
+        <view>{{item.created_at}}</view>
+      </view>
+      <view class="content">
+        <view class="goods" wx:for="{{item.detail}}" wx:key="index" wx:for-item="v">
+          <view class="img">
+            <image src="{{imgPre}}{{v.goods_img}}" mode="aspectFill"></image>
+          </view>
+          <view class="title">
+            <view>{{util.strHid(v.goods_name, 24)}}</view>
+            <view class="num">x {{v.number}}</view>
+          </view>
+          <view class="price">+ ¥ {{util.toFixed(v.pro_price, 2)}}</view>
+        </view>
+      </view>
+      <view class="footer">合计：<span>+ ¥ {{util.toFixed(item.total, 2)}}</span></view>
+    </view>
+  </view>
+</view>

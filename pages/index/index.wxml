@@ -1,0 +1,151 @@
+<view class="index">
+  <!-- 导航栏 -->
+  <view class="navbar" style="height:{{navHeight}}px; padding-top:{{navTop}}px">
+    <view class="search" bindtap="toMake" wx:if="{{navScrollTop < domScrollTop}}">
+      <view class="text" style="line-height:{{navHeight}}px">搜索心仪的商品</view>
+      <view class="img">
+        <image src="/image/search.png" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view wx:else class="logo">
+      <view class="img">
+        <image src="https://pin.giftfond.cn/icon/logo-1.png" mode="aspectFill"></image>
+      </view>
+    </view>
+  </view>
+  <view class=" navbar-brace" style="height:{{navHeight}}px"></view>
+
+  <!-- 轮播 -->
+  <view class="lb">
+    <!-- 背景圆 -->
+    <view class="bg1"></view>
+    <!-- 背景圆 -->
+    <view class="bg2"></view>
+    <view class="box">
+      <swiper autoplay="true">
+        <swiper-item wx:for="{{swiper}}" wx:key="*this">
+          <image src="{{imgPre}}{{item.image}}" mode="aspectFill" bindtap="to" data-url="{{item.path}}"></image>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+
+  <view class="content">
+    <!-- 公告 -->
+    <view class="notice shadow">
+      <view class="img">
+        <image src="/image/notice.png" mode="aspectFill"></image>
+      </view>
+      <view class="line"></view>
+      <swiper autoplay="true" vertical="true" duration="3000" duration="1000">
+        <swiper-item wx:for="{{notice}}" wx:key="id" bindtap="to" data-url="/pages/notice/notice?id={{item.id}}">
+          <view class="title">
+            {{item.title}}
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+
+
+  <view class="content">
+    <!-- ICON -->
+    <view class="icon">
+      <view>
+        <view class="img" bindtap="to" data-url="/pages/myEarn/myEarn">
+          <image src="https://pin.giftfond.cn/icon/icon1.png" mode="aspectFill"></image>
+        </view>
+        <view class="title">我的拼团</view>
+      </view>
+      <view>
+        <view class="img" bindtap="to" data-url="/pages/push/push">
+          <image src="https://pin.giftfond.cn/icon/icon2.png" mode="aspectFill"></image>
+        </view>
+        <view class="title">我的推荐</view>
+      </view>
+      <view>
+        <view class="img" bindtap="to" data-url="/pages/ranking/ranking">
+          <image src="https://pin.giftfond.cn/icon/icon3.png" mode="aspectFill"></image>
+        </view>
+        <view class="title">排行榜</view>
+      </view>
+      <view>
+        <view class="img" bindtap="to" data-url="/pages/promoter/promoter">
+          <image src="https://pin.giftfond.cn/icon/icon4.png" mode="aspectFill"></image>
+        </view>
+        <view class="title">推广中心</view>
+      </view>
+    </view>
+
+    <!-- 精选 -->
+    <view class="sel" id="dom">
+      <view class="top">
+        <view class="l">精选拼团</view>
+        <view class="r" bindtap="to" data-url="/pages/make/make">
+          <view>查看更多</view>
+          <view class="img">
+            <image src="/image/right.png" mode="aspectFill"></image>
+          </view>
+        </view>
+      </view>
+
+      <view class="box shadow" wx:for="{{active}}" wx:key="id" bindtap="to"
+        data-url="/pages/goodsDetail/goodsDetail?id={{item.id}}&groupId=0">
+        <view class="tag-img">
+          <image src="/image/tag.png" mode="aspectFill"></image>
+        </view>
+        <view class="tag-title">{{item.help_people_num}}人团</view>
+        <view class="img">
+          <image src="{{item.image_thumb_command}}" mode="aspectFill">
+          </image>
+        </view>
+        <view class="detail">
+          <view class="l">
+            <view class="img" wx:for="{{item.active}}" wx:key="index" wx:for-item="v" wx:for-index="k" wx:if="{{k<5}}">
+              <image src="{{v}}" mode="aspectFill"></image>
+            </view>
+            <view class="count">已拼{{item.count}}团</view>
+          </view>
+          <view class="r">
+            <view class="text">中签号码</view>
+            <view class="num" wx:for="{{item.luck_key}}" wx:key="*this" wx:for-item="key">{{key}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 参与动态 -->
+    <view class="join shadow">
+      <view class="title">参与动态</view>
+      <view class="list" wx:for="{{dynamic}}" wx:key="*this">
+        <view class="img">
+          <image src="{{item.avatar}}" mode="aspectFill">
+          </image>
+        </view>
+        <view class="text">{{item.content}}</view>
+        <view class="time" wx:if="{{index == 0}}">刚刚</view>
+        <view class="time" wx:else>{{item.created_at}}</view>
+      </view>
+    </view>
+
+    <!-- 拼团规则 -->
+    <view class="rule shadow">
+      <view class="title">拼团规则</view>
+      <view class="list">
+        推行“优惠拼购补贴”计划，即成功拼购后可以享受优惠的价格得到商品并获得相应的购物币，拼购不成功除了退回支付金额外还可以获得厂商补贴，让消费者体验“不一般”的网购快乐，感受“看得见”的网购实惠。
+      </view>
+      <view class="list">1：每个商品有相应的开团人数，当人数达标后，即算开团成功；</view>
+      <view class="list">2：每个商品不是百分之百可拼团获得，若未获得拼团商品，将原价退回支付的货款以及额外的厂商补贴金（团长可获得额外补贴），若成功获得拼团商品不仅可以优惠价格购买，还能获得购物币补贴；
+      </view>
+      <view class="list">3：不想参加拼团，也可单独购买该商品；</view>
+      <view class="list">4：参与拼团支付的金额如未拼团成功，支付部分原路退回，补贴部分作为余额可消费也可提现；</view>
+      <view class="list">5：参与拼团所获得的购物币在购物币商城中可当一定比例的现金使用。</view>
+    </view>
+  </view>
+</view>
+
+<!-- 版权 -->
+<copyright></copyright>
+
+<!-- 购物车数量 -->
+<carNum></carNum>

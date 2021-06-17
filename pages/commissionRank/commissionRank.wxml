@@ -1,0 +1,26 @@
+<!-- 工具 -->
+<wxs src="../../utils/index.wxs" module="util"></wxs>
+
+<view class="ranking-list">
+  <!-- 列表 -->
+  <view class="list">
+    <view class="li" wx:for="{{list}}" wx:key="id">
+      <view class="img">
+        <image wx:if="{{index == 0}}" src="/image/top1.png" mode="aspectFill"></image>
+        <image wx:if="{{index == 1}}" src="/image/top2.png" mode="aspectFill"></image>
+        <image wx:if="{{index == 2}}" src="/image/top3.png" mode="aspectFill"></image>
+        <view class="num" wx:if="{{index > 2}}">{{index + 1}}</view>
+      </view>
+      <view class="header">
+        <image src="{{item.avatar}}" mode="aspectFill"></image>
+      </view>
+      <view class="img2">
+        <image wx:if="{{item.sex == 0}}" src="/image/sex0.png" mode="aspectFill"></image>
+        <image wx:if="{{item.sex == 1}}" src="/image/sex1.png" mode="aspectFill"></image>
+        <image wx:if="{{item.sex == 2}}" src="/image/sex2.png" mode="aspectFill"></image>
+      </view>
+      <view class="name">{{item.nickname}}</view>
+      <view class="text" >¥ {{util.toFixed(item.num, 2)}}</view>
+    </view>
+  </view>
+</view>

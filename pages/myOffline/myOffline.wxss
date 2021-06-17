@@ -1,0 +1,47 @@
+.tab {
+  border-top: 20rpx solid #f8f8f8;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #999;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #ececec;
+}
+
+.tab>view {
+  padding: 25rpx 20rpx;
+  border-bottom: 6rpx solid #fff;
+  box-sizing: border-box;
+}
+
+.list>.item {
+  padding: 25rpx 60rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid #ececec;
+  font-size: 28rpx;
+}
+
+.list>.item>.user {
+  display: flex;
+  align-items: center;
+  width:45%;
+}
+
+.list>.item>.user>.img {
+  width: 69rpx;
+  height: 69rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+
+.list>.item .price {
+  color: #F10000;
+}
+.username {
+  overflow: hidden;/*超出部分隐藏*/
+  white-space: nowrap;/*不换行*/
+  text-overflow:ellipsis;/*超出部分文字以...显示*/
+}

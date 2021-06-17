@@ -1,0 +1,13 @@
+<!-- 工具 -->
+<wxs src="../../utils/index.wxs" module="util"></wxs>
+
+<view class="goods5">
+  <view class="img">
+    <image src="{{imgPre}}{{detail.image_thumb}}" mode="aspectFill"></image>
+  </view>
+  <view class="content">
+    <view>{{util.strHid(detail.goods_name, 38)}}</view>
+    <view class="specs">规格：{{detail.specifications}}</view>
+    <view class="price">¥ {{detail.price}}<span>x{{detail.number}}</span></view>
+  </view>
+</view>

@@ -1,0 +1,85 @@
+.list {
+  border-bottom: 1rpx solid #ececec;
+}
+
+.list>.li {
+  height: 185rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list>.li>.photo {
+  width: 180rpx;
+  height: 185rpx;
+  position: relative;
+  margin-right: 30rpx;
+}
+
+.list>.li>.photo>.tag-img {
+  position: absolute;
+  left: 10rpx;
+  top: -5rpx;
+  width: 67rpx;
+  height: 45rpx;
+  z-index: 1;
+}
+
+.list>.li>.photo>.tag-title {
+  position: absolute;
+  left: 8rpx;
+  top: 5rpx;
+  width: 67rpx;
+  text-align: center;
+  font-size: 16rpx;
+  color: #fff;
+  z-index: 2;
+}
+
+.list>.li>.photo>.img {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+
+.list>.li>.detail {
+  flex: 1;
+  display: flex;
+  height: 185rpx;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 5rpx;
+  box-sizing: border-box;
+}
+
+.list>.li>.detail>.title {
+  height: 90rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+}
+
+.list>.li>.detail>.label {
+  font-size: 20rpx;
+  box-sizing: border-box;
+}
+
+.list>.li>.detail>.label>view {
+  margin-top: 6rpx;
+}
+
+.list>.li>.detail>.label>view>span{
+  display: inline-block;
+  border: 1px solid #F74E6F;
+  color: #F74E6F;
+  line-height: 40rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  border-radius: 60rpx;
+}

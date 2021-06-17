@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "全部拼团",
+  "usingComponents": {
+    "goods": "/components/goods/goods"
+  }
+}

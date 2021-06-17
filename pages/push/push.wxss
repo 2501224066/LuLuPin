@@ -1,0 +1,43 @@
+.list {
+  border-top: 20rpx solid #f8f8f8;
+  padding: 0 50rpx;
+}
+
+.list>.li {
+  padding: 40rpx 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #ececec;
+}
+
+.list>.li>.header {
+  width: 86rpx;
+  height: 86rpx;
+  border-radius: 43rpx;
+  overflow: hidden;
+  margin-right: 30rpx;
+}
+
+.list>.li>.img2 {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+.list>.li>.name {
+  flex: 1;
+  font-size: 30rpx;
+  font-weight: 500;
+}
+
+.list>.li>.text {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.total {
+  text-align: center;
+  color: #ACACAC;
+  margin: 50rpx 0;
+}

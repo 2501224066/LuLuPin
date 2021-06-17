@@ -1,0 +1,88 @@
+<!-- 工具 -->
+<wxs src="../../utils/index.wxs" module="util"></wxs>
+
+<view class="promoter">
+  <!-- 信息 -->
+  <view class="info">
+    <view class="img">
+      <image src="{{userInfo.avatarUrl ? userInfo.avatarUrl :  '/image/header.png'}}" mode="aspectFill"></image>
+    </view>
+    <view class="name">{{userInfo.nicName}}</view>
+    <view>推广ID：{{userId + 43200}}</view>
+    <view class="bg">
+      <image src="https://pin.giftfond.cn/icon/promoter-bg.png" mode="widthFix"></image>
+    </view>
+  </view>
+
+  <!-- 数据 -->
+  <view class="data">
+    <view bindtap="to" data-url="/pages/withdrawal/withdrawal">
+      <view class="num">{{util.toFixed(money, 2)}}</view>
+      <view>我的余额</view>
+    </view>
+    <view class="line"></view>
+    <view bindtap="to" data-url="/pages/commissionList/commissionList">
+      <view class="num">{{util.toFixed(commission, 2)}}</view>
+      <view>总收入</view>
+    </view>
+  </view>
+
+  <!-- 二维码 -->
+  <view class="code" bindtap="to" data-url="/pages/promotionCode/promotionCode">
+    <view class="title">
+      <view class="text">点击查看我的推广码</view>
+      <view>分享任意链接/商品海报/推广码，邀请注册的新用户，在商城中消费均有一定的佣金，一次绑定，持续稳定收益。</view>
+    </view>
+    <view class="img">
+      <image src="/image/qrcode.png" mode="aspectFill"></image>
+    </view>
+  </view>
+
+  <!-- 九宫格 -->
+  <view class="box">
+    <view bindtap="to" data-url="/pages/commissionList/commissionList">
+      <view class="img">
+        <image src="https://pin.giftfond.cn/icon/promoter1.png" mode="aspectFill"></image>
+      </view>
+      <view>佣金明细</view>
+    </view>
+    <view bindtap="to" data-url="/pages/withdrawalList/withdrawalList">
+      <view class="img">
+        <image src="https://pin.giftfond.cn/icon/promoter2.png" mode="aspectFill"></image>
+      </view>
+      <view>提现明细</view>
+    </view>
+    <view bindtap="to" data-url="/pages/promotionOrder/promotionOrder">
+      <view class="img">
+        <image src="https://pin.giftfond.cn/icon/promoter3.png" mode="aspectFill"></image>
+      </view>
+      <view>推广订单</view>
+    </view>
+    <view bindtap="to" data-url="/pages/commissionRank/commissionRank">
+      <view class="img">
+        <image src="https://pin.giftfond.cn/icon/promoter4.png" mode="aspectFill"></image>
+      </view>
+      <view>佣金排名</view>
+    </view>
+    <view bindtap="to" data-url="/pages/myOffline/myOffline">
+      <view class="img">
+        <image src="https://pin.giftfond.cn/icon/promoter5.png" mode="aspectFill"></image>
+      </view>
+      <view>我的下线</view>
+    </view>
+    <view>
+      <view class="img">
+        <image src="/image/more.png" mode="aspectFill"></image>
+      </view>
+      <view>敬请期待</view>
+    </view>
+  </view>
+</view>
+
+<!-- 底部浮动栏目 -->
+<view class="footer" style="height:{{iphoneFooter ? 153 : 115}}rpx">
+  <view class="fbox">
+    <view class="save" bindtap="to" data-url="/pages/withdrawal/withdrawal">申请提现</view>
+  </view>
+</view>
+<view style="height:{{iphoneFooter ? 153 : 115}}rpx;"></view>

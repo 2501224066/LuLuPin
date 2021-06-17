@@ -1,0 +1,40 @@
+<!-- 工具 -->
+<wxs src="../../utils/index.wxs" module="util"></wxs>
+
+<view class="order">
+  <!-- TAB -->
+  <view class="tab">
+    <view wx:for="{{tabList}}" wx:key="*this">
+      <view class="{{tabIndex == index ? 'selected' :''}}" bindtap="checkoutTab" data-index="{{index}}">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="list" wx:for="{{list}}" wx:key="index">
+    <view class="top" wx:for="{{item.detail}}" wx:key="index" wx:for-item="value">
+      <view class="img">
+        <image wx:if="{{item.buy_type == 3}}" src="{{imgPre}}{{value.goods_img}}" mode="aspectFill"></image>
+        <image wx:else src="{{value.goods_img}}" mode="aspectFill"></image>
+      </view>
+      <view class="center">
+        <view class="title">{{util.strHid(value.goods_name, 25)}}</view>
+        <view class="price">¥ {{ util.toFixed(value.money, 2) }}<span>x{{value.number}}</span></view>
+      </view>
+      <view class="status green" wx:if="{{value.status == 1}}">待付款</view>
+      <view class="status" wx:if="{{value.status == 2}}">待发货</view>
+      <view class="status" wx:if="{{value.status == 3}}">已发货</view>
+      <view class="status" wx:if="{{value.status == 4}}">已完成</view>
+      <view class="status red" wx:if="{{value.status == 0}}">已取消</view>
+    </view>
+    <view class="down">
+      <view class="time">{{item.created_at}}</view>
+      <view class="r">
+        <view class="buy" wx:if="{{item.status == 1 && item.buy_type != 3}}" bindtap="to" data-status="{{item.status}}"
+          data-url="/pages/confirm/confirm?orderId={{item.id}}&goodsId={{item.detail[0].goods_id}}">付款</view>
+        <view class="buy" wx:if="{{item.status == 1 && item.buy_type == 3}}" bindtap="pointsPay" data-id="{{item.id}}">付款</view>
+        <view class="buy" wx:if="{{item.status == 3}}" bindtap="take" data-id="{{item.id}}">确认收货</view>
+        <view class="see" bindtap="to" data-status="{{item.status}}"
+          data-url="/pages/orderDetail/orderDetail?id={{item.id}}">查看订单</view>
+      </view>
+    </view>
+  </view>
+</view>

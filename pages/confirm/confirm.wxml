@@ -1,0 +1,69 @@
+<!-- 工具 -->
+<wxs src="../../utils/index.wxs" module="util"></wxs>
+
+<view class="confirm">
+  <view class="top"></view>
+  <view class="title">收货地址</view>
+
+  <!-- 地址 -->
+  <view class="address shadow" bindtap="to" data-url="/pages/address/address">
+    <view class="img">
+      <image src="/image/address2.png"></image>
+    </view>
+    <view class="center" wx:if="{{address.id}}">
+      <view class="name">{{address.contact}}<span>{{address.mobile}}</span></view>
+      <view>{{address.province}}-{{address.city}}-{{address.area}} {{address.street}}</view>
+    </view>
+    <view class="center" wx:else>暂未设置地址，点击前往设置</view>
+    <view class="r">
+      <image src=" /image/right2.png">
+      </image>
+    </view>
+  </view>
+
+  <view class="title">拼团商品</view>
+
+  <!-- 信息 -->
+  <view class="detail shadow">
+    <view wx:if="orderDetail.buy_type != 3">
+      <goods2 detail="{{detail}}"></goods2>
+    </view>
+    <view class="li">
+      <view>数量金额</view>
+      <view>x{{orderDetail.detail[0].number}}</view>
+      <view>¥ {{orderDetail.money}}</view>
+    </view>
+    <view class="li">
+      <view>运费</view>
+      <view></view>
+      <view>¥ {{util.toFixed(orderPayData.freight_price,2)}}</view>
+    </view>
+    <view class="li">
+      <view>购物币兑换</view>
+      <view>余额：{{orderPayData.total_point}} 购物币</view>
+      <view>- {{orderPayData.point}}</view>
+    </view>
+    <view class="li">
+      <view>余额抵用</view>
+      <view>余额：¥ {{util.toFixed(orderPayData.total_balance,2)}}</view>
+      <view>- ¥ {{util.toFixed(orderPayData.coun_mony,2)}}</view>
+    </view>
+    <view class="li">
+      <view>实际应付</view>
+      <view></view>
+      <view>¥ {{util.toFixed(orderPayData.pay_money,2)}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 底部浮动栏目 -->
+<view class="footer" style="height:{{iphoneFooter ? 204 : 170}}rpx">
+  <view class="fbox">
+    <view class="tag">团购商品均为正归渠道合格商品，非质量问题暂不支持退换货</view>
+    <view class="content">
+      <view>合计：<span style="color:#FA4556">¥ {{util.toFixed(orderPayData.pay_money,2)}}</span></view>
+      <view class="btn" bindtap="pay">立即支付</view>
+    </view>
+  </view>
+</view>
+<view style="height:{{iphoneFooter ? 204 : 170}}rpx;margin-top:2vh"></view>
