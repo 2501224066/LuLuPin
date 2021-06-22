@@ -1,0 +1,118 @@
+.balance {
+  border-top: 20rpx solid #f8f8f8;
+  border-bottom: 20rpx solid #f8f8f8;
+  padding: 30rpx 5%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.balance>.title {
+  font-weight: 500;
+}
+
+.balance>.money {
+  color: #e50000;
+}
+
+.label {
+  padding: 30rpx 5%;
+  box-sizing: border-box;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.label>.img {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+.price {
+  padding: 30rpx 5%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  border-top: 1rpx solid #ececec;
+  border-bottom: 1rpx solid #ececec;
+}
+
+.price>.tag {
+  position: relative;
+  top: -5rpx;
+  font-size: 30rpx;
+  width: 15%;
+  text-align: right;
+}
+
+.price>.num {
+  flex: 1;
+  height: 100rpx;
+  margin-left: 20rpx;
+}
+
+.price>.num>input {
+  width: 100%;
+  height: 100%;
+  font-size: 100rpx;
+  color: #04be02;
+}
+
+.price>.num .placeholder-class {
+  color: #e1e1e1;
+}
+
+.memo {
+  padding: 30rpx 5%;
+  box-sizing: border-box;
+  color: #999;
+  border-bottom: 20rpx solid #f8f8f8;
+}
+
+.memo>.title {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+.memo>.li {
+  margin-bottom: 6rpx;
+}
+
+.memo>.li>span {
+  color: #e50000;
+}
+
+.agree {
+  padding: 30rpx 5%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.agree>switch{
+  transform: scale(0.6);
+}
+
+.agree>.title {
+  margin-left: 10rpx;
+}
+
+.agree>.title>span {
+  color: #e50000;
+  text-decoration: underline;
+}
+
+.sub{
+  width: 90%;
+  margin: 3vh 5%;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #fff;
+  text-align: center;
+  background: #F74E6F;
+  border-radius: 45rpx;
+  font-size: 36rpx;
+}

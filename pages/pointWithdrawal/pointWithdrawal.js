@@ -6,7 +6,9 @@ import {
 Page({
   data: {
     agree: false,
-    hasPrice: '0.00',
+    hasPoint: '0.00',
+    price2pointRate: 1,
+    point: null,
     price: null
   },
 
@@ -18,7 +20,8 @@ Page({
   getPrice() {
     userInfo().then(res => {
       this.setData({
-        hasPrice: res.data.balance
+        hasPoint: res.data.point,
+        price2pointRate: parseFloat(wx.getStorageSync('price2pointRate'))
       })
     })
   },
@@ -33,7 +36,16 @@ Page({
   // 金额
   setPrice(e) {
     this.setData({
-      price: e.detail.value
+      price: e.detail.value,
+      point: (e.detail.value * this.data.price2pointRate).toFixed(2) * 1
+    })
+  },
+
+  // 购物币
+  setPoint(e) {
+    this.setData({
+      point: e.detail.value,
+      price: (e.detail.value / this.data.price2pointRate).toFixed(2) * 1
     })
   },
 
@@ -47,17 +59,17 @@ Page({
       return
     }
 
-    if (this.data.price < 10) {
+    if (this.data.point < 10) {
       wx.showToast({
-        title: '最低提现10元',
+        title: '最低提现10购物币',
         icon: 'loading'
       })
       return
     }
 
     let obj = {
-      type: 1,
-      money: this.data.price
+      type: 2,
+      money: this.data.point
     }
     transfer(obj).then(res => {
       wx.showToast({

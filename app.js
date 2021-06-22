@@ -4,7 +4,7 @@ import {
 
 App({
   globalData: {
-    imgPre: 'https://pin.giftfond.cn/', // 图片前缀
+    imgPre: 'https://shop.970209.xyz/', // 图片前缀
     navHeight: 0,
     navTop: 0,
     windowHeight: 0,
@@ -26,6 +26,7 @@ App({
     setting().then(res => {
       wx.setStorageSync('applyPromotersPrice', Number(res.data.pro_price))
       wx.setStorageSync('pointsPushImg', res.data.points_pushImg)
+      wx.setStorageSync('price2pointRate', res.data.point_rate)
     })
   },
 

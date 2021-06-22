@@ -68,6 +68,8 @@
 .list>.li>.detail>.label {
   font-size: 20rpx;
   box-sizing: border-box;
+  max-height: 110rpx;
+  overflow: auto;
 }
 
 .list>.li>.detail>.label>view {

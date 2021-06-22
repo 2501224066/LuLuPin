@@ -15,8 +15,10 @@ Page({
     goodsId: null,
     orderId: null,
     detail: null,
+    rebate: null,
     address: null,
     orderPayData: null,
+    remark: '',
   },
 
   onLoad(options) {
@@ -67,8 +69,16 @@ Page({
     }
     goodsDetail(obj).then(res => {
       this.setData({
-        detail: res.data.goods
+        detail: res.data.goods,
+        rebate: res.data.rule
       })
+    })
+  },
+
+  // 备注
+  remark(e) {
+    this.setData({
+      remark: e.detail.value
     })
   },
 
@@ -100,7 +110,8 @@ Page({
     }
 
     let obj = {
-      order_id: that.data.orderId
+      order_id: that.data.orderId,
+      message: that.data.remark
     }
     pay(obj).then(res => {
       wx.requestPayment({
@@ -113,7 +124,7 @@ Page({
           if (r.errMsg == "requestPayment:ok") {
             // 订阅
             wx.requestSubscribeMessage({
-              tmplIds: ['WfgVI-w26qo57hZEzOrb1nFVrTvh0wvdw3DnXJCc8iI', 'FEt-lfDG1w4G6IMync2bIzeII2MtlbDrBnqhlDHNUjE', 'ogaAjFMMr8XwY1yuV5Dz-55SPLyS5lmYeUNpONE_QGE'],
+              tmplIds: ['PJaTyh5A5WpCHhI43NhCYhxUBJJDS7VKsPKun5fIrFY', 'NRVZbTmq0-xVthJBJtDis572-CXiVY6AOE-QmY7-1rU', 'Bd2w1K75eOaIeEIPUCCXRwUPZLDnhzKYAYJeZoOofD8'],
               success() {
                 // 直接购买
                 if (that.data.orderDetail.buy_type != 1) {
@@ -129,7 +140,7 @@ Page({
                   duration: 5000,
                   mask: true
                 })
-               setTimeout(() => {
+                setTimeout(() => {
                   let obj = {
                     id: that.data.orderId
                   }

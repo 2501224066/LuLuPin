@@ -17,6 +17,9 @@
 
   <!-- 余额 -->
   <view class="total">
+    <view class="op">
+      <view bindtap="to" data-url="/pages/pointWithdrawal/pointWithdrawal">提现管理</view>
+    </view>
     <view class="money">
       <view class="num">{{util.toFixed(total,2)}}</view>
       <view>购物币余额</view>

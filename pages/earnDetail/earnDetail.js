@@ -10,6 +10,7 @@ Page({
     iphoneFooter: 0,
     timestamp: 0,
     detail: null,
+    rebate: null,
     d: '00',
     H: '00',
     i: '00',
@@ -77,7 +78,8 @@ Page({
     }
     groupDetail(obj).then(res => {
       this.setData({
-        detail: res.data
+        detail: res.data,
+        rebate: res.data.rule
       })
       this.countTime()
     })

@@ -39,9 +39,7 @@
       </view>
     </view>
     <view class="label">
-      <view>中签得 {{detail.point}} 购物币</view>
-      <view>未中签得 ¥ {{detail.factory_subsidy}}</view>
-      <view>团长额外得 ¥ {{detail.chief_subsidy}}</view>
+      <view wx:for="{{detail.rule}}" wx:key="index">{{item}}</view>
     </view>
   </view>
 </view>

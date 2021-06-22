@@ -46,6 +46,12 @@
       <view></view>
       <view>¥ {{util.toFixed(detail.payMoney,2)}}</view>
     </view>
+    <view class="li">
+      <view>备注</view>
+      <view>
+        <textarea bindinput="remark" value="{{remark}}"></textarea>
+      </view>
+    </view>
   </view>
 </view>
 

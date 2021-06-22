@@ -48,7 +48,8 @@
     "pages/pointsPush/pointsPush",
     "pages/bindSuccess/bindSuccess",
     "pages/pendingOrderList/pendingOrderList",
-    "pages/orderSend/orderSend"
+    "pages/orderSend/orderSend",
+    "pages/pointWithdrawal/pointWithdrawal"
   ],
   "window": {
     "backgroundTextStyle": "light",

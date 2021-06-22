@@ -14,7 +14,8 @@ Page({
     carId: null,
     detail: null,
     address: null,
-    orderId: null
+    orderId: null,
+    remark: ''
   },
 
   onLoad(options) {
@@ -41,6 +42,13 @@ Page({
       this.setData({
         detail: res.data
       })
+    })
+  },
+
+  // 备注
+  remark(e) {
+    this.setData({
+      remark: e.detail.value
     })
   },
 
@@ -73,7 +81,8 @@ Page({
 
     let obj = {
       cart_id: this.data.carId,
-      address_id: this.data.address.id
+      address_id: this.data.address.id,
+      message: this.data.remark
     }
     pointsCreateOrder(obj).then(res => {
       this.setData({
@@ -94,7 +103,7 @@ Page({
       if (!res.data.needPay) {
         // 订阅
         wx.requestSubscribeMessage({
-          tmplIds: ['9Dw4q9dwf5syslHVvldG23vdYtsVk2fDrsTK9cG38JE', 'FEt-lfDG1w4G6IMync2bIzeII2MtlbDrBnqhlDHNUjE', 'ogaAjFMMr8XwY1yuV5Dz-55SPLyS5lmYeUNpONE_QGE'],
+          tmplIds: ['9pBhhFAQrh4uJ7wUzGg-miJndHgpS_fOVnKF87JCE5Y', 'NRVZbTmq0-xVthJBJtDis572-CXiVY6AOE-QmY7-1rU', 'Bd2w1K75eOaIeEIPUCCXRwUPZLDnhzKYAYJeZoOofD8'],
           success() {
             wx.reLaunch({
               url: '/pages/orderDetail/orderDetail?id=' + that.data.orderId,
@@ -114,7 +123,7 @@ Page({
           if (r.errMsg == "requestPayment:ok") {
             // 订阅
             wx.requestSubscribeMessage({
-              tmplIds: ['9Dw4q9dwf5syslHVvldG23vdYtsVk2fDrsTK9cG38JE', 'FEt-lfDG1w4G6IMync2bIzeII2MtlbDrBnqhlDHNUjE', 'ogaAjFMMr8XwY1yuV5Dz-55SPLyS5lmYeUNpONE_QGE'],
+              tmplIds: ['9pBhhFAQrh4uJ7wUzGg-miJndHgpS_fOVnKF87JCE5Y', 'NRVZbTmq0-xVthJBJtDis572-CXiVY6AOE-QmY7-1rU', 'Bd2w1K75eOaIeEIPUCCXRwUPZLDnhzKYAYJeZoOofD8'],
               success() {
                 wx.reLaunch({
                   url: '/pages/orderDetail/orderDetail?id=' + that.data.orderId,

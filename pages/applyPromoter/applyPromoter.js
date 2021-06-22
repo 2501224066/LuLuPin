@@ -123,13 +123,14 @@ Page({
       return
     }
 
+    /*
     if (this.data.idFace && this.data.idfBack) {
       wx.showToast({
         title: '身份证不完整',
         icon: 'loading'
       })
       return
-    }
+    }*/
 
     let obj = {
       name: this.data.name,
@@ -144,7 +145,7 @@ Page({
       if (this.data.price == 0) {
         //订阅
         wx.requestSubscribeMessage({
-          tmplIds: ['LlJq7Wkrrmd1M5AZDa0_Pfk-tKVFpuYAt20517DiIO0'],
+          tmplIds: ['2eGjjDeAL5V45McUK8HUqm88S_VD0t1Z0LsVsJtFdEI'],
           success() {
             wx.reLaunch({
               url: '/pages/applyPromoterRel/applyPromoterRel',
@@ -164,7 +165,7 @@ Page({
           if (r.errMsg == "requestPayment:ok") {
             //订阅
             wx.requestSubscribeMessage({
-              tmplIds: ['LlJq7Wkrrmd1M5AZDa0_Pfk-tKVFpuYAt20517DiIO0'],
+              tmplIds: ['2eGjjDeAL5V45McUK8HUqm88S_VD0t1Z0LsVsJtFdEI'],
               success() {
                 wx.reLaunch({
                   url: '/pages/applyPromoterRel/applyPromoterRel',

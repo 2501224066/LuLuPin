@@ -26,7 +26,7 @@
   <!-- 信息 -->
   <view class="detail shadow">
     <view wx:if="orderDetail.buy_type != 3">
-      <goods2 detail="{{detail}}"></goods2>
+      <goods2 detail="{{detail}}" rebate="{{rebate}}"></goods2>
     </view>
     <view class="li">
       <view>数量金额</view>
@@ -52,6 +52,12 @@
       <view>实际应付</view>
       <view></view>
       <view>¥ {{util.toFixed(orderPayData.pay_money,2)}}</view>
+    </view>
+    <view class="li">
+      <view>备注</view>
+      <view>
+        <textarea bindinput="remark" value="{{remark}}"></textarea>
+      </view>
     </view>
   </view>
 </view>

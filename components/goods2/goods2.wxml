@@ -19,8 +19,7 @@
           {{util.strHid(detail.name, 35)}}
         </view>
         <view class="label">
-          <view><span>中签得 {{detail.point}} 购物币，未中签得 ¥{{detail.factory_subsidy}}</span></view>          
-          <view><span>团长额外得 ￥{{detail.chief_subsidy}}</span></view>
+          <view wx:for="{{rebate}}" wx:key="index"><span>{{item}}</span></view>
         </view>
       </view>
     </view>

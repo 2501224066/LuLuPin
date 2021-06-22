@@ -1,7 +1,7 @@
 <view class="earn-detail">
   <!-- 商品 -->
   <view class="detail">
-    <goods2 detail="{{detail.goods}}"></goods2>
+    <goods2 detail="{{detail.goods}}" rebate="{{rebate}}"></goods2>
     <view class="content">
       <view wx:if="{{detail.pay_money == ''}}"></view>
       <view wx:else>已支付：￥{{detail.pay_money}}元</view>
@@ -44,20 +44,25 @@
 
   <view class="text">
     <view class="shadow">
-      邀请好友参团中签可获得<span> {{detail.goods.point}} 购物币</span>，未中签再获得<span> ￥{{detail.goods.factory_subsidy}} 元</span>厂商现金补贴，团长额外获得 <span>￥{{detail.goods.chief_subsidy}}</span> 元补贴金。
+      <span>邀请好友参团</span>
+      <span wx:for="{{detail.rule}}" wx:key="index">， {{item}}</span>
+      <span>。</span>
     </view>
   </view>
 
-  <view class="luck" bindtap="to" data-url="/pages/luckDraw/luckDraw?id={{id}}&goodsId={{detail.goods.id}}">查看抽签详情</view>
+  <view class="luck" bindtap="to" data-url="/pages/luckDraw/luckDraw?id={{id}}&goodsId={{detail.goods.id}}">查看抽签详情
+  </view>
 </view>
 
 <!-- 底部浮动栏目 -->
 <view class="footer" style="height:{{iphoneFooter ? 154 : 120}}rpx">
   <view class="fbox">
     <view class="btn1" bindtap="toMake">拼团主页</view>
-    <view wx:if="{{detail.groupStatus == 0 && detail.overtime >= timestamp && detail.num != 0}}" class=" btn2" bindtap="join">加入拼团</view>
+    <view wx:if="{{detail.groupStatus == 0 && detail.overtime >= timestamp && detail.num != 0}}" class=" btn2"
+      bindtap="join">加入拼团</view>
     <view wx:if="{{detail.overtime < timestamp || detail.num == 0}}" class="btn3">已结束</view>
-    <button wx:if="{{detail.groupStatus == 1 && detail.overtime >= timestamp && detail.num > 0}}" class="btn2" open-type="share">邀请好友参团</button>
+    <button wx:if="{{detail.groupStatus == 1 && detail.overtime >= timestamp && detail.num > 0}}" class="btn2"
+      open-type="share">邀请好友参团</button>
   </view>
 </view>
 <view style="height:{{iphoneFooter ? 154 : 120}}rpx;margin-top:2vh"></view>

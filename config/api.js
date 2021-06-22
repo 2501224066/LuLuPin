@@ -558,12 +558,3 @@ export function orderSend(data, repair = '') {
     data: data
   })
 }
-
-// 返利数据
-export function rebate(data, repair = '') {
-  return common.go({
-    method: 'get',
-    url: '/goods/getRule' + repair,
-    data: data
-  })
-}

@@ -31,6 +31,7 @@
       </view>
     </view>
 
+    <!--
     <view class="item" style="border: none;">
       <view class="tag">上传身份证</view>
       <view class="id">
@@ -50,6 +51,7 @@
         </view>
       </view>
     </view>
+    -->
   </view>
 
 

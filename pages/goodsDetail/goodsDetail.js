@@ -3,7 +3,6 @@ import {
   follow,
   createOrder,
   pointsGoodsSku,
-  rebate
 } from '../../config/api'
 
 const App = getApp()
@@ -61,19 +60,6 @@ Page({
       iphoneFooter: App.globalData.iphoneFooter
     })
     this.getData()
-    this.rebate()
-  },
-
-  // 返利数据
-  rebate() {
-    let obj = {
-      id: this.data.id
-    }
-    rebate(obj).then(res => {
-      this.setData({
-        rebate: res.data
-      })
-    })
   },
 
   // 标签距离顶部距离
@@ -99,6 +85,7 @@ Page({
         follow: res.data.goods.collect_status,
         maxBuyNum: res.data.goods.max_buycount,
         stock: res.data.goods.stock,
+        rebate: res.data.rule
       })
       if (this.data.group != null) {
         this.countTime()
@@ -244,7 +231,7 @@ Page({
 
     let obj = {
       buy_type: this.data.buyType,
-      sku_id: this.data.skuId,
+      sku_id: this.data.skuId ? this.data.skuId : 0,
       good_id: this.data.id,
       num: this.data.buyNum,
       message: '',

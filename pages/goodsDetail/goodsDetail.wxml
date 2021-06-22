@@ -50,11 +50,7 @@
     <view class="back">
       <view class="three"></view>
       <view class="text">
-        <view>{{rebate.chef_fail[0]}}</view>
-        <view>{{rebate.chef_fail_ext[0]}}</view>
-        <view>{{rebate.chef_win[0]}}</view>
-        <view>{{rebate.member_fail[0]}}</view>
-        <view>{{rebate.member_win[0]}}</view>
+        <view wx:for="{{rebate}}" wx:key="index">{{item}}</view>
       </view>
     </view>
   </view>

@@ -72,6 +72,7 @@
 
 .detail>.li>view:nth-child(2) {
   flex: 1;
+  max-width: 80%;
   text-align: center;
   color: #838383;
 }
@@ -82,6 +83,11 @@
   text-align: right;
 }
 
+.detail>.li>view>textarea {
+  width: 100%;
+  height: 100rpx;
+  text-align: left;
+}
 
 .footer {
   position: fixed;
