@@ -3,6 +3,8 @@ import {
   getAddress
 } from '../../config/api'
 
+import QQMapWX from "../../utils/qqmap-wx-jssdk.min.js"
+
 const App = getApp()
 
 Page({
@@ -46,7 +48,30 @@ Page({
         region: [res.data.province, res.data.city, res.data.area]
       })
     })
+  },
 
+  // 获取定位
+  getAddressForMap() {
+    wx.getLocation({
+      type: 'wgs84',
+      success: (res) => {
+        let qqmapsdk = new QQMapWX({
+          key: App.globalData.mapKey,
+        });
+        qqmapsdk.reverseGeocoder({
+          location: {
+            latitude: res.latitude,
+            longitude: res.longitude
+          },
+          success: (re) => {
+            this.setData({
+              region: [re.result.address_component.province, re.result.address_component.city, re.result.address_component.district],
+              address: re.result.address_component.street
+            })
+          }
+        })
+      }
+    })
   },
 
   // 编辑地址

@@ -8,11 +8,9 @@
             class="picker-text">{{region[0]}}，{{region[1]}}，{{region[2]}}</text>
         </picker>
       </view>
-      <!--
-      <view class="img">
-        <image src="/image/right2.png" mode="aspectFill"></image>
+      <view class="img" bindtap="getAddressForMap">
+        <image src="/image/address.png" mode="aspectFill"></image>
       </view>
-      -->
     </view>
     <view class="li">
       <view class="label">详细地址</view>

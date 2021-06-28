@@ -47,9 +47,7 @@
     <view class="join">
       <view class="title">参团特权</view>
       <view class="text shadow">
-        参团中签可获得购物币 <span>{{detail.point}}点</span> ，未中签再获得
-        <span>{{util.toFixed(detail.factory_subsidy, 2)}}元</span> 厂商现金补贴， 团长额外获得
-        <span>{{util.toFixed(detail.chief_subsidy, 2)}}元</span>补贴金。
+        <span wx:for="{{detail.rule}}" wx:key="index">{{item}},快要去好友参团吧！</span>
       </view>
     </view>
 
@@ -60,10 +58,9 @@
         <view>1、该拼团需<span class="red">{{detail.position.length}}</span>人参与，其中<span
             class="red">{{detail.luck_key.length}}</span>人可获拼得商品；</view>
         <view>2、参与拼团支付成功后，刮开上方卡片获得中签号码；</view>
-        <view>3、获得的号码与开奖号码中任意一位一致即为中签，中签后可获得<span class="red">拼团商品</span>和<span class="red">{{detail.point}}购物币</span>；
+        <view>3、获得的号码与开奖号码中任意一位一致即为中签，中签后可获得<span class="red">拼团商品</span>和<span class="red">购物币</span>；
         </view>
-        <view>4、未中签者，拼团人满结束后，原路退回参团款项，同时获得<span class="red">￥{{util.toFixed(detail.factory_subsidy,
-            2)}}元</span>厂商补贴金，团长额外获得<span class="red">￥{{util.toFixed(detail.chief_subsidy, 2)}}元</span>补贴金。</view>
+        <view>4、未中签者，拼团人满结束后，原路退回参团款项，同时获得<span class="red">补贴</span>厂商补贴金，团长获得<span class="red">额外补贴金</span>。</view>
       </view>
     </view>
   </view>
@@ -97,7 +94,7 @@
 <view class="tips" wx:if="{{tipsShow}}">
   <view class="box">
     <view>点击上方卡片抽签</view>
-    <view class="memo">未抽中立即退款，得现金红包</view>
+    <view class="memo">未抽中立即退款，得奖励</view>
     <view class="img">
       <image src="/image/tips.png" mode="aspectFill"></image>
     </view>

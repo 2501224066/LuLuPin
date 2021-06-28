@@ -4,7 +4,8 @@ import {
 
 App({
   globalData: {
-    imgPre: 'https://shop.970209.xyz/', // 图片前缀
+    mapKey: 'LIHBZ-ELKL3-LLD34-YBUY2-2KZ5E-K2FEE', // 腾讯地图服务 KEY
+    imgPre: 'https://test.giftfond.cn/', // 图片前缀
     navHeight: 0,
     navTop: 0,
     windowHeight: 0,

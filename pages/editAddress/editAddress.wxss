@@ -21,7 +21,7 @@
 }
 
 .list>.li>.img {
-  width: 15rpx;
+  width: 30rpx;
   height: 30rpx;
 }
 
