@@ -38,11 +38,11 @@
       <view></view>
       <view>¥ {{util.toFixed(orderPayData.freight_price,2)}}</view>
     </view>
-    <view class="li">
+    <!--view class="li">
       <view>购物币兑换</view>
       <view>余额：{{orderPayData.total_point}} 购物币</view>
       <view>- {{orderPayData.point}}</view>
-    </view>
+    </view-->
     <view class="li">
       <view>余额抵用</view>
       <view>余额：¥ {{util.toFixed(orderPayData.total_balance,2)}}</view>

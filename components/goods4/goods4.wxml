@@ -10,7 +10,7 @@
     <view class="title">
       <span wx:if="{{detail.home_push}}">荐</span> {{util.strHid(detail.name, 24)}}
     </view>
-    <view class="tag">
+        <view class="tag">
       可最多使用<span>{{util.toFixed(detail.available_point,
         2)}}购物币</span>抵扣<span>{{util.toFixed(detail.ded_price, 2)}}元</span>
     </view>

@@ -1,17 +1,14 @@
 <!-- 工具 -->
 <wxs src="../../utils/index.wxs" module="util"></wxs>
-
 <view class="goods-detail">
   <!-- 导航栏 -->
-  <view class="navbar"
-    style="height:{{navHeight}}px; padding-top:{{navTop}}px; background:{{navScrollTop > (domScrollTop - navHeight) ? '#fff' : ''}}">
+  <view class="navbar" style="height:{{navHeight}}px; padding-top:{{navTop}}px; background:{{navScrollTop > (domScrollTop - navHeight) ? '#fff' : ''}}">
     <view class="box">
       <view class="img">
         <image src="/image/left.png" mode="aspectFill" bindtap="back"></image>
       </view>
     </view>
   </view>
-
   <!-- 轮播 -->
   <view class="lb">
     <swiper autoplay="true" indicator-dots="true" indicator-color="#000" indicator-active-color="#f73d4c">
@@ -20,23 +17,21 @@
       </swiper-item>
     </swiper>
   </view>
-
   <view class="box1" id="dom">
-    <!--标题-->
+    <!-- 标题 -->
     <view class="title">
       <span>{{detail.goods.help_people_num}}人团</span>
       {{detail.goods.name}}
     </view>
-
-    <!--价格-->
+    <!-- 价格 -->
     <view class="price">
       <view class="l">
         <view class="ll">
           <view>¥</view>
           <view>{{detail.goods.active_price}}</view>
-          <view> / {{detail.goods.unit}} 拼团价</view>
+          <view>/ {{detail.goods.unit}} 拼团价</view>
         </view>
-        <view class="lr"> 原价 ¥{{detail.goods.price_origin}} </view>
+        <view class="lr">原价 ¥{{detail.goods.price_origin}}</view>
       </view>
       <view class="r">
         <view class="text">中签码</view>
@@ -45,7 +40,6 @@
         </view>
       </view>
     </view>
-
     <!-- 返购物币 -->
     <view class="back">
       <view class="three"></view>
@@ -54,36 +48,36 @@
       </view>
     </view>
   </view>
-
   <view class="box1" wx:if="{{detail.goods.promotion_status}}">
     <!-- 推广 -->
     <view class="push">
       <view class="img">
         <image src="/image/income.png" mode="aspectFill"></image>
       </view>
-      <view style="font-size:28rpx">推荐好友购买此产品您可获得<span>￥{{util.toFixed(detail.goods.pro_price, 2)}}元</span>/件收入</view>
+      <view style="font-size:28rpx">
+        推荐好友购买此产品您可获得
+        <span>￥{{util.toFixed(detail.goods.pro_price, 2)}}元</span>
+        /件收入
+      </view>
     </view>
   </view>
-
   <view class="box2">
     <view class="title" wx:if="{{group}}">
       <view class="l">
         <view>参与拼团</view>
       </view>
       <view class="r" bindtap="toMake">
-        <view>更多拼团</view>
+        <view>全部拼团</view>
         <view class="img">
           <image src="/image/right2.png" mode="aspectFill"></image>
         </view>
       </view>
     </view>
-
     <!-- 拼团列表 -->
     <view class="list shadow" wx:if="{{group}}">
       <view class="li" wx:for="{{group}}" wx:key="id">
         <view class="img-box">
-          <view class="img" wx:for="{{item.active_recode}}" wx:for-item="v" wx:for-index="k" wx:key="index"
-            wx:if="{{k<5}}">
+          <view class="img" wx:for="{{item.active_recode}}" wx:for-item="v" wx:for-index="k" wx:key="index" wx:if="{{k<5}}">
             <image src="{{v.avatar}}" mode="aspectFill"></image>
           </view>
         </view>
@@ -105,7 +99,6 @@
         </view>
       </view>
     </view>
-
     <!-- 流程 -->
     <view class="flow shadow">
       <view class="line"></view>
@@ -129,34 +122,46 @@
       <view class="text">
         <view>
           <view>开团/参与拼团</view>
-          <view><span>{{detail.goods.help_people_num}}人</span>成团</view>
+          <view>
+            <span>{{detail.goods.help_people_num}}人</span>
+            成团
+          </view>
         </view>
         <view>
-          <view><span>{{detail.goods.luck_key.length}}个</span>中签名额</view>
-          <view>未中签额外获得奖励</view>
+          <view>
+            <span>{{detail.goods.luck_key.length}}个</span>
+            中签名额
+          </view>
+          <view>
+            中签可得
+            <span>商品+奖励</span>
+          </view>
         </view>
         <view>
-          <view><span>{{detail.goods.help_people_num - detail.goods.luck_key.length}}人</span>未中签获得</view>
-          <view>未中签<span>退款+奖励</span></view>
+          <view>
+            <span>{{detail.goods.help_people_num - detail.goods.luck_key.length}}人</span>
+            未中签获得
+          </view>
+          <view>
+            未中签
+            <span>退款+奖励</span>
+          </view>
         </view>
       </view>
     </view>
   </view>
-
   <view class="box2" style="border:0px">
     <view class="title">
       <view class="l">
         <view>商品详情</view>
       </view>
     </view>
-
     <!-- 富文本 -->
     <view class="rich">
       <rich-text nodes="{{detail.goods.content}}" space="nbsp"></rich-text>
     </view>
   </view>
 </view>
-
 <!-- 底部浮动栏目 -->
 <view class="footer" style="height:{{iphoneFooter ? 178 : 140}}rpx">
   <view class="fbox">
@@ -180,14 +185,13 @@
       <view>规则</view>
     </view>
     <view class="f2">
-      <!--view bindtap="openSpecs" data-type="2">单独购买</view-->
+      <!-- view bindtap="openSpecs" data-type="2">单独购买</view -->
       <view bindtap="openSpecs" data-type="1" wx:if="{{!groupId}}">自己开团</view>
       <view bindtap="openSpecs" data-type="1" wx:else>参团购买</view>
     </view>
   </view>
 </view>
 <view style="height:{{iphoneFooter ? 178 : 140}}rpx;"></view>
-
 <!-- 规格 -->
 <view class="specs" wx:if="{{specsShow}}">
   <view class="box" style="padding-bottom:{{iphoneFooter ? 84 : 50}}rpx">
@@ -197,7 +201,6 @@
         <image src="/image/close2.png" mode="aspectFill"></image>
       </view>
     </view>
-
     <!-- 商品 -->
     <view class="goods">
       <view class="img">
@@ -206,24 +209,30 @@
       <view class="detail">
         <view class="title">{{util.strHid(detail.goods.name, 34)}}</view>
         <view class="price">
-          <view wx:if="{{buyType == 1}}" style="color: #FA4556">拼团价 ¥ <span>{{detail.goods.active_price}}</span> /
-            {{detail.goods.unit}}</view>
-          <view wx:else style="color: #ff5e01">原价 ¥ <span>{{detail.goods.alone_price}}</span> / {{detail.goods.unit}}
+          <view wx:if="{{buyType == 1}}" style="color: #FA4556">
+            拼团价 ¥
+            <span>{{detail.goods.active_price}}</span>
+            /
+            {{detail.goods.unit}}
+          </view>
+          <view wx:else style="color: #ff5e01">
+            原价 ¥
+            <span>{{detail.goods.alone_price}}</span>
+            / {{detail.goods.unit}}
           </view>
           <view class="stock">库存：{{stock}}</view>
         </view>
       </view>
     </view>
-
     <!-- 数据 -->
     <view class="list" wx:for="{{detail.sku}}" wx:key="*this">
       <view class="tag">选择{{item.mame}}</view>
       <view class="li">
-        <view class="{{util.indexOf(specsArr, v) > -1 ? 'checked' : ''}}" wx:for="{{item.val}}" wx:key="*this"
-          wx:for-item="v" data-name="{{v}}" data-arr="{{item.val}}" bindtap="checkedSpecs">{{v}}</view>
+        <view class="{{util.indexOf(specsArr, v) > -1 ? 'checked' : ''}}" wx:for="{{item.val}}" wx:key="*this" wx:for-item="v" data-name="{{v}}" data-arr="{{item.val}}" bindtap="checkedSpecs">
+          {{v}}
+        </view>
       </view>
     </view>
-
     <!-- 数量 -->
     <view class="list">
       <view class="tag">选择数量</view>
@@ -236,7 +245,6 @@
         <view class="max">最多限购{{maxBuyNum}}份</view>
       </view>
     </view>
-
     <!-- 按钮 -->
     <view class="btn" wx:if="{{buyType == 1}}" bindtap="create">确定选择</view>
     <view class="btn2" wx:else bindtap="create">确定购买</view>

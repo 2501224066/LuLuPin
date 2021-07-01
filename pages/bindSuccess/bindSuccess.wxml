@@ -2,7 +2,7 @@
   <view class="img">
     <image src="/image/logo.png" mode="aspectFill"></image>
   </view>
-  <view class="title">您通过 {{upName}} 的分享绑定成功</view>
+  <view class="title">欢迎进入小程序！</view>
 </view>
 
 <!-- 底部浮动栏目 -->

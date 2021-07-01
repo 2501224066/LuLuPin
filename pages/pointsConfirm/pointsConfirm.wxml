@@ -33,7 +33,7 @@
     </view>
     <view class="li">
       <view>运费</view>
-      <view>满68免运费</view>
+      <view>除特殊地区</view>
       <view>¥ {{util.toFixed(detail.freight_price, 2)}}</view>
     </view>
     <view class="li">

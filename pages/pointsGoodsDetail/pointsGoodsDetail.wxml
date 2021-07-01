@@ -45,15 +45,15 @@
     </view>
   </view>
 
-  <view class="box1" wx:if="{{detail.goods.promotion_status}}">
+  <!--view class="box1" wx:if="{{detail.goods.promotion_status}}"-->
     <!-- 推广 -->
-    <view class="push">
+    <!--view class="push">
       <view class="img">
         <image src="/image/income.png" mode="aspectFill"></image>
       </view>
       <view style="font-size:28rpx">推荐好友购买此产品您可获得<span>￥{{util.toFixed(detail.goods.pro_price, 2)}}元</span>/件收入</view>
     </view>
-  </view>
+  </view-->
 
   <view class="box2" style="border:0px">
     <view class="title">
@@ -72,7 +72,7 @@
 <!-- 底部浮动栏目 -->
 <view class="footer" style="height:{{iphoneFooter ? 178 : 140}}rpx">
   <view class="fbox">
-    <view class="f1" bindtap="toCar">
+    <!--view class="f1" bindtap="toCar">
       <view class="num">
         <view>{{carNum}}</view>
       </view>
@@ -82,7 +82,7 @@
         </view>
         <view>购物车</view>
       </view>
-    </view>
+    </view-->
     <view class="f1" bindtap="openShare">
       <view class="icon">
         <view class="img">
@@ -92,8 +92,8 @@
       </view>
     </view>
     <view class="f2">
-      <view bindtap="openSpecs" data-type="1">加入购物车</view>
-      <view bindtap="openSpecs" data-type="2">直接购买</view>
+      <!--view bindtap="openSpecs" data-type="1">加入购物车</view-->
+      <view bindtap="openSpecs" data-type="2">立即购买</view>
     </view>
   </view>
 </view>
@@ -172,8 +172,4 @@
       </view>
     </view>
   </view>
-</view>
-
-<view class="btn_top" bindtap="gotop">
-  <text class="btn-gotop" style="">顶部</text>
 </view>

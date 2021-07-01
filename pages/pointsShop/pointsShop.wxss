@@ -40,7 +40,7 @@
   flex-wrap: wrap;
   align-items: center;
   height: 310rpx;
-  margin-top:20rpx;
+  margin-top: 20rpx;
 }
 
 .icon>.item {
@@ -60,7 +60,12 @@
   margin-bottom: 10rpx;
 }
 
-.push{
+.push {
+  height: 550rpx;
+  margin: 10rpx 0 10rpx 0;
+}
+
+.push {
   height: 550rpx;
   margin: 10rpx 0 10rpx 0;
 }

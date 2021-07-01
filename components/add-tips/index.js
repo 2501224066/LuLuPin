@@ -54,14 +54,14 @@ Component({
       });
     },
     okHandler: function () {
-      const storage_key = this.data.SHOW_TOP_key;
+      const storage_key  = this.data.SHOW_TOP_key;
       let key = STORAGE_KEY_ONE;
       this.setData({
         SHOW_TOP: false
       });
       wx.setStorage({
         key,
-        data: +new Date,
+        data: + new Date,
       });
     }
   }

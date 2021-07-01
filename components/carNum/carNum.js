@@ -14,7 +14,7 @@ Component({
       if (wx.getStorageSync('loginStatus')) {
         carList().then(res => {
           wx.setTabBarBadge({
-            index: 2,
+            index: 5,
             text: String(res.data.length)
           })
         })

@@ -47,7 +47,7 @@
     <view class="join">
       <view class="title">参团特权</view>
       <view class="text shadow">
-        <span wx:for="{{detail.rule}}" wx:key="index">{{item}},快要去好友参团吧！</span>
+        <span wx:for="{{detail.rule}}" wx:key="index">{{item}}</span>
       </view>
     </view>
 
@@ -83,10 +83,11 @@
     <image src="/image/rel.png" mode="aspectFill"></image>
   </view>
     <view class="close" bindtap="relClose">X</view>
-    <view style="margin-top:250rpx;font-size:24rpx;">您刮的中签码是</view>
+    <view style="margin-top:310rpx;font-size:24rpx;">您刮的中签码是</view>
     <view class="num">{{self}}</view>
-    <view style="font-weight:800;color: #4a3307;" wx:if="{{util.indexOf(detail.luck_key, self) > -1}}">恭喜，您已中签！</view>
-    <view style="font-weight:800;color: #4a3307;" wx:else>很遗憾，您未中签！</view>
+    <view style="font-weight:800;color: #4a3307;padding:0 20px;" wx:if="{{util.indexOf(detail.luck_key, self) > -1}}">恭喜，您已中签，获得商品和平台额外奖励，请到商城兑换产品！</view>
+    <view style="font-weight:800;color: #4a3307;padding:0 20px；" wx:else>很遗憾，您未中签，支付金额将原路退回,所得奖励可到商城兑换产品！</view>
+    <view><button class="fanhui" bindtap="fanhui">返回商城</button></view>
   </view>
 </view>
 

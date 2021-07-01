@@ -12,7 +12,7 @@ App({
     iphoneFooter: 0,
   },
 
-  onLaunch(){
+  onLaunch() {
     this.update()
   },
 

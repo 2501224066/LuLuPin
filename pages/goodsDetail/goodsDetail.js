@@ -282,7 +282,7 @@ Page({
 
   // 去拼团列表
   toMake() {
-    wx.switchTab({
+    wx.navigateTo({
       url: '/pages/make/make',
     })
   },

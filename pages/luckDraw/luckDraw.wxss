@@ -190,7 +190,7 @@
 
 .rel>.box {
   width: 400rpx;
-  height: 669rpx;
+  height: 769rpx;
   border-radius: 10rpx;
   position: relative;
   text-align: center;
@@ -206,7 +206,7 @@
   left: 0;
   top: 0;
   width: 400rpx;
-  height: 669rpx;
+  height: 769rpx;
   z-index: -1;
 }
 
@@ -287,4 +287,14 @@
   line-height: 60rpx;
   border-radius: 30rpx;
   margin-top: 50rpx;
+}
+.fanhui {
+
+  line-height: 50rpx;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 100rpx;
+  background: #ff7b02;
+  font-size: 16px;
+  margin-top: 40rpx;
 }

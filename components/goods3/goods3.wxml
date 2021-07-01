@@ -18,8 +18,8 @@
       已售{{detail.sale_num}}件
     </view>
     <view class="down">
-      <view class="price"><span>¥</span>{{util.toFixed(detail.price, 2)}}<text
-          class="bline">{{detail.price_market}}</text></view>
+      <view class="price"><span>¥</span>{{util.toFixed(detail.price, 2)}}<text class="bline">{{detail.price_market}}</text></view>
+      
       <view class="add">
         <image src="/image/right3.png" mode="aspectFill"></image>
       </view>

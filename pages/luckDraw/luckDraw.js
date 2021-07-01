@@ -138,6 +138,15 @@ Page({
     })
   },
 
+    // 返回商城
+    fanhui() {
+      wx.switchTab({
+        url: '/pages/pointsShop/pointsShop',
+      })
+    },
+
+    
+
   // 补零
   addZero(num) {
     return num < 10 ? "0" + num : num

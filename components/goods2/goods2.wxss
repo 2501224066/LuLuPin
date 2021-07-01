@@ -55,7 +55,7 @@
 }
 
 .list>.li>.detail>.title {
-  height: 90rpx;
+  /* height: 90rpx; */
   font-size: 24rpx;
   font-weight: 500;
   -webkit-line-clamp: 2;
@@ -68,7 +68,7 @@
 .list>.li>.detail>.label {
   font-size: 20rpx;
   box-sizing: border-box;
-  max-height: 110rpx;
+  /** max-height: 110rpx; */
   overflow: auto;
 }
 
@@ -80,8 +80,8 @@
   display: inline-block;
   border: 1px solid #F74E6F;
   color: #F74E6F;
-  line-height: 40rpx;
-  padding: 0 20rpx;
+  line-height: 36rpx;
+  padding: 0 18rpx;
   box-sizing: border-box;
   border-radius: 60rpx;
 }
