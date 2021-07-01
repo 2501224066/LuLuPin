@@ -76,9 +76,30 @@ Page({
 
   // 编辑地址
   save() {
-    if (!(this.data.name && (/^1(3|4|5|6|7|8|9)\d{9}$/.test(this.data.phone)) && this.data.address && this.data.sex && this.data.address)) {
+    if (!this.data.address) {
       wx.showToast({
-        title: '填写有误',
+        title: '地址未填写',
+        icon: "loading"
+      })
+      return
+    }
+    if (!this.data.name) {
+      wx.showToast({
+        title: '联系人姓名未填写',
+        icon: "loading"
+      })
+      return
+    }
+    if (!his.data.sex) {
+      wx.showToast({
+        title: '性别未选择',
+        icon: "loading"
+      })
+      return
+    }
+    if (!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(this.data.phone))) {
+      wx.showToast({
+        title: '手机号有误',
         icon: "loading"
       })
       return

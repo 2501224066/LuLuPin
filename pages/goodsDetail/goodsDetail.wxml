@@ -136,8 +136,8 @@
           <view>未中签额外获得奖励</view>
         </view>
         <view>
-          <view>中签获得</view>
-          <view>现金与购物币</view>
+          <view><span>{{detail.goods.help_people_num - detail.goods.luck_key.length}}人</span>未中签获得</view>
+          <view>未中签<span>退款+奖励</span></view>
         </view>
       </view>
     </view>

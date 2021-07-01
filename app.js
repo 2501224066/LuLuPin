@@ -25,6 +25,7 @@ App({
   // 设置
   getSetting() {
     setting().then(res => {
+      wx.setStorageSync('minWithdrawalPrice', Number(res.data.min_balance))
       wx.setStorageSync('applyPromotersPrice', Number(res.data.pro_price))
       wx.setStorageSync('pointsPushImg', res.data.points_pushImg)
       wx.setStorageSync('price2pointRate', res.data.point_rate)

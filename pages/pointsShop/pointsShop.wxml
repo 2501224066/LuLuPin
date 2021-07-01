@@ -2,7 +2,7 @@
 
   <!-- 搜索 -->
   <view class="search">
-    <view class="box shadow" bindtap="to" data-url="/pages/classify/classify">
+    <view class="box shadow" bindtap="toClassify">
       <view class="img">
         <image src="/image/search2.png" mode="aspectFill"></image>
       </view>
@@ -29,7 +29,7 @@
       </view>
       <view>热销推荐</view>
     </view>
-    <view class="item" wx:for="{{icon}}" wx:key="index" bindtap="to" data-url="/pages/classify/classify?id={{item.id}}">
+    <view class="item" wx:for="{{icon}}" wx:key="index" bindtap="toClassify" data-id="{{item.id}}">
       <view class="img">
         <image src="{{imgPre}}{{item.icon}}" mode="aspectFill"></image>
       </view>

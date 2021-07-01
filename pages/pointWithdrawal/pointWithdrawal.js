@@ -9,7 +9,8 @@ Page({
     hasPoint: '0.00',
     price2pointRate: 1,
     point: null,
-    price: null
+    price: null,
+    minWithdrawalPrice: 0
   },
 
   onShow() {
@@ -20,6 +21,7 @@ Page({
   getPrice() {
     userInfo().then(res => {
       this.setData({
+        minWithdrawalPrice: wx.getStorageSync('minWithdrawalPrice'),
         hasPoint: res.data.point,
         price2pointRate: parseFloat(wx.getStorageSync('price2pointRate'))
       })
@@ -59,9 +61,9 @@ Page({
       return
     }
 
-    if (this.data.point < 10) {
+    if (this.data.price < this.data.minWithdrawalPrice) {
       wx.showToast({
-        title: '最低提现10购物币',
+        title: '最低提现' + this.data.minWithdrawalPrice + '元',
         icon: 'loading'
       })
       return

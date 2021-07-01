@@ -38,7 +38,7 @@ Page({
     }
   },
 
-  onShow(){
+  onShow() {
     this.setData({
       imgPre: App.globalData.imgPre,
       page: 1,
@@ -140,6 +140,14 @@ Page({
       this.setData({
         domScrollTop: res[0].top
       })
+    })
+  },
+
+  // 跳转分类
+  toClassify(e) {
+    wx.setStorageSync('classifyId', e.currentTarget.dataset.id)
+    wx.switchTab({
+      url: '/pages/classify/classify'
     })
   },
 

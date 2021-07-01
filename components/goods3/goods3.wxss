@@ -51,6 +51,12 @@
   margin-right: 10rpx;
 }
 
+.goods3>.content>.tag {
+  font-size: 21rpx;
+  color: #2b2b2b;
+  margin: 10rpx 0;
+}
+
 .goods3>.content>.num {
   font-size: 21rpx;
   color: #8E8E8E;

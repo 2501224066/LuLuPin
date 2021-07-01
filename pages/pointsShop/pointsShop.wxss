@@ -61,7 +61,7 @@
 }
 
 .push{
-  height: 500rpx;
+  height: 550rpx;
   margin: 10rpx 0 10rpx 0;
 }
 
@@ -74,14 +74,14 @@
 }
 
 .push>.goods {
-  height: 420rpx;
+  height: 470rpx;
   padding: 0 25rpx;
   display: flex;
   overflow-x: auto;
 }
 
 .push>.goods>.item {
-  height: 420rpx;
+  height: 470rpx;
   flex-basis: 220rpx;
   flex-shrink: 0;
   padding-right: 25rpx;

@@ -20,19 +20,17 @@ Page({
     tabId: null // icon跳进来
   },
 
-  onLoad(options) {
-    if (options.hasOwnProperty('id')) {
-      this.setData({
-        tabId: options.id
-      })
-    }
+  onShow() {
+    this.setData({
+      tabId: wx.getStorageSync('classifyId')
+    })
     this.setData({
       imgPre: App.globalData.imgPre,
       page: 1
     })
     this.getClassify()
   },
-  
+
   // 关键字
   keyword(e) {
     this.setData({

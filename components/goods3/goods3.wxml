@@ -10,12 +10,16 @@
     <view class="title">
       <span wx:if="{{detail.home_push}}">荐</span>{{util.strHid(detail.name, 26)}}
     </view>
+    <view class="tag">
+      可最多使用<span>{{util.toFixed(detail.available_point,
+        2)}}购物币</span>抵扣<span>{{util.toFixed(detail.ded_price, 2)}}元</span>
+    </view>
     <view class="num">
       已售{{detail.sale_num}}件
     </view>
     <view class="down">
-      <view class="price"><span>¥</span>{{util.toFixed(detail.price, 2)}}<text class="bline">{{detail.price_market}}</text></view>
-      
+      <view class="price"><span>¥</span>{{util.toFixed(detail.price, 2)}}<text
+          class="bline">{{detail.price_market}}</text></view>
       <view class="add">
         <image src="/image/right3.png" mode="aspectFill"></image>
       </view>
