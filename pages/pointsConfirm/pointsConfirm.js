@@ -103,7 +103,7 @@ Page({
       if (!res.data.needPay) {
         // 订阅
         wx.requestSubscribeMessage({
-          tmplIds: ['9pBhhFAQrh4uJ7wUzGg-miJndHgpS_fOVnKF87JCE5Y', 'NRVZbTmq0-xVthJBJtDis572-CXiVY6AOE-QmY7-1rU', 'Bd2w1K75eOaIeEIPUCCXRwUPZLDnhzKYAYJeZoOofD8'],
+          tmplIds: ['9pBhhFAQrh4uJ7wUzGg-miJndHgpS_fOVnKF87JCE5Y', 'PulFWEKZ1ilN4Xe65u6gb9QedPSO16eRMSpZJ5ixk_s', 'Bd2w1K75eOaIeEIPUCCXRwUPZLDnhzKYAYJeZoOofD8'],
           success() {
             wx.reLaunch({
               url: '/pages/orderDetail/orderDetail?id=' + that.data.orderId,
@@ -123,7 +123,7 @@ Page({
           if (r.errMsg == "requestPayment:ok") {
             // 订阅
             wx.requestSubscribeMessage({
-              tmplIds: ['9pBhhFAQrh4uJ7wUzGg-miJndHgpS_fOVnKF87JCE5Y', 'NRVZbTmq0-xVthJBJtDis572-CXiVY6AOE-QmY7-1rU', 'Bd2w1K75eOaIeEIPUCCXRwUPZLDnhzKYAYJeZoOofD8'],
+              tmplIds: ['9pBhhFAQrh4uJ7wUzGg-miJndHgpS_fOVnKF87JCE5Y', 'PulFWEKZ1ilN4Xe65u6gb9QedPSO16eRMSpZJ5ixk_s', 'Bd2w1K75eOaIeEIPUCCXRwUPZLDnhzKYAYJeZoOofD8'],
               success() {
                 wx.reLaunch({
                   url: '/pages/orderDetail/orderDetail?id=' + that.data.orderId,

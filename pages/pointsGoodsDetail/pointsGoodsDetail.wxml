@@ -72,7 +72,7 @@
 <!-- 底部浮动栏目 -->
 <view class="footer" style="height:{{iphoneFooter ? 178 : 140}}rpx">
   <view class="fbox">
-    <!--view class="f1" bindtap="toCar">
+    <view class="f1" bindtap="toCar">
       <view class="num">
         <view>{{carNum}}</view>
       </view>
@@ -82,7 +82,7 @@
         </view>
         <view>购物车</view>
       </view>
-    </view-->
+    </view>
     <view class="f1" bindtap="openShare">
       <view class="icon">
         <view class="img">
@@ -92,7 +92,7 @@
       </view>
     </view>
     <view class="f2">
-      <!--view bindtap="openSpecs" data-type="1">加入购物车</view-->
+      <view bindtap="openSpecs" data-type="1">加入购物车</view>
       <view bindtap="openSpecs" data-type="2">立即购买</view>
     </view>
   </view>

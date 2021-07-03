@@ -44,13 +44,13 @@
     <view class="back">
       <view class="three"></view>
       <view class="text">
-        <view wx:for="{{rebate}}" wx:key="index">{{item}}</view>
+        <view wx:for="{{rebate}}" wx:key="index">{{item}} </view>
       </view>
     </view>
   </view>
-  <view class="box1" wx:if="{{detail.goods.promotion_status}}">
+  <!--view class="box1" wx:if="{{detail.goods.promotion_status}}" -->
     <!-- 推广 -->
-    <view class="push">
+    <!--view class="push">
       <view class="img">
         <image src="/image/income.png" mode="aspectFill"></image>
       </view>
@@ -60,7 +60,7 @@
         /件收入
       </view>
     </view>
-  </view>
+  </view -->
   <view class="box2">
     <view class="title" wx:if="{{group}}">
       <view class="l">
@@ -139,8 +139,8 @@
         </view>
         <view>
           <view>
-            <span>{{detail.goods.help_people_num - detail.goods.luck_key.length}}人</span>
-            未中签获得
+            <span>{{detail.goods.help_people_num - detail.goods.luck_key.length}}个</span>
+            未中签获名额
           </view>
           <view>
             未中签

@@ -296,5 +296,14 @@
   border-radius: 100rpx;
   background: #ff7b02;
   font-size: 16px;
-  margin-top: 40rpx;
+  margin-top: 20rpx;
+}
+.zhong {
+  color: #ff0000;
+  font-weight: 800;
+  font-size: 30rpx;
+}
+.tishi {
+  color: #666;
+  font-weight: 400;
 }

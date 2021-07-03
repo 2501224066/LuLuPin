@@ -57,16 +57,23 @@ Page({
       return
     }
 
-    let obj = {
-      type: 1,
-      money: this.data.price
-    }
-    transfer(obj).then(res => {
-      wx.showToast({
-        title: '提交申请成功',
-        icon: 'success'
-      })
-      wx.navigateBack()
+    // 订阅
+    let that = this
+    wx.requestSubscribeMessage({
+      tmplIds: ['NRVZbTmq0-xVthJBJtDis572-CXiVY6AOE-QmY7-1rU'],
+      success() {
+        let obj = {
+          type: 1,
+          money: that.data.price
+        }
+        transfer(obj).then(res => {
+          wx.showToast({
+            title: '提交申请成功',
+            icon: 'success'
+          })
+          wx.navigateBack()
+        })
+      }
     })
   },
 

@@ -67,7 +67,7 @@ Page({
         list: this.data.list
       })
       wx.setTabBarBadge({
-        index: 2,
+        index: 3,
         text: String(this.data.list.length)
       })
       this.total()

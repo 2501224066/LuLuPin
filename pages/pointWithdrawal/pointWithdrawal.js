@@ -69,16 +69,22 @@ Page({
       return
     }
 
-    let obj = {
-      type: 2,
-      money: this.data.point
-    }
-    transfer(obj).then(res => {
-      wx.showToast({
-        title: '提交申请成功',
-        icon: 'success'
-      })
-      wx.navigateBack()
+    let that = this
+    wx.requestSubscribeMessage({
+      tmplIds: ['NRVZbTmq0-xVthJBJtDis572-CXiVY6AOE-QmY7-1rU'],
+      success() {
+        let obj = {
+          type: 2,
+          money: that.data.point
+        }
+        transfer(obj).then(res => {
+          wx.showToast({
+            title: '提交申请成功',
+            icon: 'success'
+          })
+          wx.navigateBack()
+        })
+      }
     })
   },
 

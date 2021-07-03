@@ -90,7 +90,7 @@ Page({
       })
       return
     }
-    if (!this.data.sex) {
+    if (!his.data.sex) {
       wx.showToast({
         title: '性别未选择',
         icon: "loading"

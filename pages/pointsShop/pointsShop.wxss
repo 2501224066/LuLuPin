@@ -79,7 +79,7 @@
 }
 
 .push>.goods {
-  height: 470rpx;
+  height: 490rpx;
   padding: 0 25rpx;
   display: flex;
   overflow-x: auto;

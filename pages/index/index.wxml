@@ -9,7 +9,7 @@
     </view>
     <view wx:else class="logo">
       <view class="img">
-        <image src="https://pin.giftfond.cn/icon/logo-1.png" mode="aspectFill"></image>
+        <image src="/image/logo-1.png" mode="aspectFill"></image>
       </view>
     </view>
   </view>
@@ -132,10 +132,10 @@
     <view class="rule shadow">
       <view class="title">拼团规则</view>
       <view class="list">
-        推行“优惠拼购补贴”计划，即成功拼购后可以享受优惠的价格得到商品并获得相应的购物币，拼购不成功除了退回支付金额外还可以获得厂商补贴，让消费者体验“不一般”的网购快乐，感受“看得见”的网购实惠。
+        推行“优惠拼购补贴”计划，即成功拼购后可以享受优惠的价格得到商品并获得相应的奖励，拼购不成功除了退回支付金额外还可以获得厂商补贴，让消费者体验“不一般”的网购快乐，感受“看得见”的网购实惠。
       </view>
       <view class="list">1：每个商品有相应的开团人数，当人数达标后，即算开团成功；</view>
-      <view class="list">2：每个商品不是百分之百可拼团获得，若未获得拼团商品，将原价退回支付的货款以及额外的厂商补贴金（团长可获得额外补贴），若成功获得拼团商品不仅可以优惠价格购买，还能获得购物币补贴；
+      <view class="list">2：每个商品不是百分之百可拼团获得，若未获得拼团商品，将原价退回支付的货款以及额外的厂商补贴（团长可获得额外补贴），若成功获得拼团商品不仅可以优惠价格购买，还能获得奖励补贴；
       </view>
       <view class="list">3：不想参加拼团，也可单独购买该商品；</view>
       <view class="list">4：参与拼团支付的金额如未拼团成功，支付部分原路退回，补贴部分作为余额可消费也可提现；</view>

@@ -124,7 +124,7 @@ Page({
           if (r.errMsg == "requestPayment:ok") {
             // 订阅
             wx.requestSubscribeMessage({
-              tmplIds: ['PJaTyh5A5WpCHhI43NhCYhxUBJJDS7VKsPKun5fIrFY', 'NRVZbTmq0-xVthJBJtDis572-CXiVY6AOE-QmY7-1rU', 'Bd2w1K75eOaIeEIPUCCXRwUPZLDnhzKYAYJeZoOofD8'],
+              tmplIds: ['PJaTyh5A5WpCHhI43NhCYhxUBJJDS7VKsPKun5fIrFY', 'PulFWEKZ1ilN4Xe65u6gb9QedPSO16eRMSpZJ5ixk_s', 'Bd2w1K75eOaIeEIPUCCXRwUPZLDnhzKYAYJeZoOofD8'],
               success() {
                 // 直接购买
                 if (that.data.orderDetail.buy_type != 1) {

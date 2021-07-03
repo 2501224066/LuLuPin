@@ -58,7 +58,7 @@
         <view>1、该拼团需<span class="red">{{detail.position.length}}</span>人参与，其中<span
             class="red">{{detail.luck_key.length}}</span>人可获拼得商品；</view>
         <view>2、参与拼团支付成功后，刮开上方卡片获得中签号码；</view>
-        <view>3、获得的号码与开奖号码中任意一位一致即为中签，中签后可获得<span class="red">拼团商品</span>和<span class="red">购物币</span>；
+        <view>3、获得的号码与开奖号码中任意一位一致即为中签，中签后可获得<span class="red">拼团商品</span>和<span class="red">奖励</span>；
         </view>
         <view>4、未中签者，拼团人满结束后，原路退回参团款项，同时获得<span class="red">补贴</span>厂商补贴金，团长获得<span class="red">额外补贴金</span>。</view>
       </view>
@@ -83,10 +83,17 @@
     <image src="/image/rel.png" mode="aspectFill"></image>
   </view>
     <view class="close" bindtap="relClose">X</view>
-    <view style="margin-top:310rpx;font-size:24rpx;">您刮的中签码是</view>
+    <view style="margin-top:350rpx;font-size:24rpx;">您刮的中签码是</view>
     <view class="num">{{self}}</view>
-    <view style="font-weight:800;color: #4a3307;padding:0 20px;" wx:if="{{util.indexOf(detail.luck_key, self) > -1}}">恭喜，您已中签，获得商品和平台额外奖励，请到商城兑换产品！</view>
-    <view style="font-weight:800;color: #4a3307;padding:0 20px；" wx:else>很遗憾，您未中签，支付金额将原路退回,所得奖励可到商城兑换产品！</view>
+    <view style="font-weight:800;color: #4a3307;padding:0 10px;font-size:12px;" wx:if="{{util.indexOf(detail.luck_key, self) > -1}}">
+    <view class="zhong">恭喜，您已中签!</view> 
+  <view class="tishi">拼团成功后将获得商品，获得额外奖励可到商城兑换产品，快去邀请好友参团吧！</view>
+  </view>
+    <view style="font-weight:800;color: #4a3307;padding:0 10px;font-size:12px;" wx:else>
+      <view class="zhong">很遗憾，您未中签！</view>
+      <view class="tishi">支付金额将原路退回，拼团成功后获得奖励可到商城兑换产品，快去邀请好友参团吧！
+      </view>
+      </view>
     <view><button class="fanhui" bindtap="fanhui">返回商城</button></view>
   </view>
 </view>
